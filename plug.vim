@@ -27,6 +27,7 @@ Plug 'LunarVim/darkplus.nvim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/edge'
+Plug 'Everblush/everblush.nvim', { 'as': 'everblush' }
 "}}}
 
 " Color Preview "{{{
@@ -73,7 +74,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 " snippets {{{
 Plug 'L3MON4D3/LuaSnip' 
 Plug 'rafamadriz/friendly-snippets'
-Plug 'mattn/emmet-vim'
 "}}}
 
 "File Search {{{
@@ -97,6 +97,8 @@ Plug 'p00f/nvim-ts-rainbow'
 
 " Github {{{
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 " }}}
 
 " Status Line {{{
@@ -121,5 +123,10 @@ Plug 'karb94/neoscroll.nvim'
 Plug 'tpope/vim-commentary'
 " }}}
 
-call plug#end()
+" Folding {{{
+Plug 'anuvyklack/fold-preview.nvim'
+Plug 'anuvyklack/pretty-fold.nvim'
+Plug 'anuvyklack/keymap-amend.nvim'
+" }}}
 
+call plug#end()

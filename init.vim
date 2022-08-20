@@ -6,10 +6,6 @@
 " ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
 
 " Functions {{{
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
- 
 autocmd!
 autocmd FileType * set fo-=c fo-=r fo-=o " Disable continuation of comments to the next line
 autocmd FileType * set formatoptions+=j  " Remove a comment leader when joining lines
@@ -17,7 +13,6 @@ autocmd FileType * set formatoptions+=l  " Don't break a line after a one-letter
 autocmd FileType * set formatoptions+=n  " Recognize numbered lists
 autocmd FileType * set formatoptions-=q  " Don't format comments
 autocmd FileType * set formatoptions-=t  " Don't autowrap text using 'textwidth'
-autocmd BufReadPost,FileReadPost * normal zR 
 "}}}
 
 " Imports {{{
@@ -32,6 +27,7 @@ runtime ./lua/user/lsp/init.lua
 set linebreak
 set breakindent
 let &showbreak = "↳ "
+" set foldmethod=syntax
 " set foldmethod=marker foldlevel=0
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
@@ -91,7 +87,7 @@ endif
 " Tema {{{
 syntax enable
 set background=dark
-colorscheme edge
+colorscheme everblush 
 " }}}
 
 " Neoscroll {{{

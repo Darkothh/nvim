@@ -2,11 +2,6 @@ if not pcall(require, "nvim-treesitter") then
   return
 end
 
-local ts_debugging = false
-if ts_debugging then
-  RELOAD "nvim-treesitter"
-end
-
 local list = require("nvim-treesitter.parsers").get_parser_configs()
 
 list.sql = {

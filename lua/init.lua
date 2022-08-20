@@ -1,4 +1,6 @@
 require("user.autopairs")
+require("user.fold")
+require("user.gist")
 require("user.luasnip")
 require("user.cmp")
 require("user.gitsigns")
@@ -13,4 +15,4 @@ require("user.ts-autotag")
 require("user.ts-rainbow")
 require("user.discord-presence")
 require("user.impatient")
-
+require("user.themes.everblush")
