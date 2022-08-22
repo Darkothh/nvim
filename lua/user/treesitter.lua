@@ -58,17 +58,14 @@ end)()
 
 local _ = require("nvim-treesitter.configs").setup {
   ensure_installed = {
-    "go",
     "html",
     "css",
+    "lua",
+    "vim",
     "javascript",
     "json",
     "markdown",
     "python",
-    "query",
-    "rust",
-    "toml",
-    "tsx",
     "typescript",
   },
 

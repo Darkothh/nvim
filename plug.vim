@@ -14,15 +14,6 @@ call plug#begin()
 
 " Temas "{{{
 " ------------------------------------------------------------
-" Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-" Plug 'liuchengxu/space-vim-dark'
-" Plug 'nikolvs/vim-sunbather'
-" Plug 'phanviet/vim-monokai-pro'
-" Plug 'sheerun/vim-polyglot'
-" Plug 'nikolvs/vim-sunbather'
-" Plug 'fcpg/vim-orbital'
-" Plug 'ntk148v/vim-horizon'
-" Plug 'gantoreno/vim-gabriel'
 Plug 'LunarVim/darkplus.nvim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/everforest'
@@ -121,6 +112,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'karb94/neoscroll.nvim'
 Plug 'tpope/vim-commentary'
+Plug 'vimwiki/vimwiki'
+Plug 'mbbill/undotree'
 " }}}
 
 " Folding {{{

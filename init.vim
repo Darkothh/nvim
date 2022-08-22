@@ -25,6 +25,7 @@ runtime ./lua/user/lsp/init.lua
 
 " Vim settings {{{
 set linebreak
+set nocompatible
 set breakindent
 let &showbreak = "↳ "
 " set foldmethod=syntax
@@ -72,10 +73,12 @@ set nojoinspaces " don't autoinsert two spaces after '.', '?', '!' for join comm
 set showcmd " extra info at end of command line
 set wildignore+=*/node_modules/**
 filetype plugin indent on
+filetype plugin on
 set ttyfast
 set lazyredraw
 let g:sneak#label = 1
 highlight Comment cterm=italic gui=italic
+syntax on
 " }}}
 
 if (has("termguicolors"))
@@ -94,3 +97,5 @@ colorscheme everblush
 lua require('neoscroll').setup()
 "}}}
 
+au FileType vimwiki setlocal shiftwidth=6 tabstop=6 noexpandtab
+let g:vimwiki_listsyms = '✗○◐●✓'
