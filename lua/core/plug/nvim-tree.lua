@@ -1,4 +1,3 @@
-
 require'nvim-tree'.setup {
   disable_netrw        = false,
   hijack_netrw         = true,
@@ -6,8 +5,7 @@ require'nvim-tree'.setup {
   ignore_buffer_on_setup = false,
   ignore_ft_on_setup   = {},
   auto_reload_on_write = true,
-  -- render.highligt_git = 1,
-  open_on_tab          = false,
+  open_on_tab          = true,
   hijack_cursor        = false,
   update_cwd           = true,
   hijack_unnamed_buffer_when_opening = false,
@@ -70,7 +68,7 @@ require'nvim-tree'.setup {
       quit_on_open = true,
       resize_window = false,
       window_picker = {
-        enable = false,
+        enable = true,
         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
         exclude = {
           filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame", },
