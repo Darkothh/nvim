@@ -1,12 +1,12 @@
-function map(mode, shortcut, command)
+local function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
 end
 
-function imap(shortcut, command)
+local function imap(shortcut, command)
   map('i', shortcut, command)
 end
 
-function nmap(shortcut, command)
+local function nmap(shortcut, command)
   map('n', shortcut, command)
 end
 
@@ -21,16 +21,38 @@ map('', '<c-c>', ':PackerCompile<cr>')
 nmap('<c-b>', ':NvimTreeToggle<cr>')
 nmap('<leader>ef', ':NvimTreeFindFile<cr>')
 
+nmap('<c-f>', ':Format<cr>')
+
 -- Commentary
 map('', '<leader>/', ':Commentary<cr>')
+
+
+vim.keymap.set("n", "<c-q>", function()
+  local cmd = vim.cmd
+  cmd([[
+  try
+  q
+  catch 
+  echo "Error " . v:exception
+  endtry
+  ]])
+
+  if cmd then
+    if vim.fn.input "Quieres guardar y salir? (s = si)" == "s" then
+      cmd([[
+      write
+      q
+      ]])
+    end
+  end
+end, { desc = "my hello world" })
 
 -- Nvim
 nmap('ss', ':split<Return><C-w>w')
 nmap('sv', ':vsplit=<Return><C-w>w')
 map('', '<F5>', ':set nowrap!<cr>')
-map('i', ',,', '<Esc>')
+imap(',,', '<Esc>')
 map('', '<c-s>', ':w<cr>')
-map('', '<c-q>', ':q<cr>')
 map('', '<c-r>', ':source %<cr>')
 nmap('dw', 'vb"_d')
 nmap('U', '<cmd>redo<cr>')

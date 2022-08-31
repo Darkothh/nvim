@@ -1,6 +1,6 @@
 local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
 if not status_ok then
-	return
+  return
 end
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
@@ -10,15 +10,49 @@ end
 
 lsp_installer.setup{}
 
-	local opts = {
-		on_attach = require("core.lsp.handlers").on_attach,
-		capabilities = require("core.lsp.handlers").capabilities,
-	}
+local opts = {
+  on_attach = require("core.lsp.handlers").on_attach,
+  capabilities = require("core.lsp.handlers").capabilities,
+}
 
 lspconfig.sumneko_lua.setup {
-  opts = opts,
+  on_attach = opts.on_attach,
+  capabilities = opts.capabilities,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+      workspace = {
+        library = {
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          [vim.fn.stdpath("config") .. "/lua"] = true,
+        },
+      },
+    },
+  },
 }
 
 lspconfig.tsserver.setup {
-  opts = opts,
+  on_attach = opts.on_attach,
+  capabilities = opts.capabilities,
+}
+
+lspconfig.html.setup{
+  on_attach = opts.on_attach,
+  capabilities = opts.capabilities,
+}
+
+lspconfig.cssls.setup {
+  on_attach = opts.on_attach,
+  capabilities = opts.capabilities,
+}
+
+lspconfig.vimls.setup {
+  on_attach = opts.on_attach,
+  capabilities = opts.capabilities,
+}
+
+lspconfig.emmet_ls.setup{
+  filetypes = {'html'},
 }

@@ -8,6 +8,23 @@ local custom_captures = {
   ["namespace.type"] = "TSNamespaceType",
 }
 
+local swap_next, swap_prev = (function()
+  local swap_objects = {
+    p = "@parameter.inner",
+    f = "@function.outer",
+    e = "@element",
+    v = "@variable",
+  }
+
+  local n, p = {}, {}
+  for key, obj in pairs(swap_objects) do
+    n[string.format("<M-Space><M-%s>", key)] = obj
+    p[string.format("<M-BS><M-%s>", key)] = obj
+  end
+
+  return n, p
+end)()
+
 require("nvim-treesitter.highlight").set_custom_captures(custom_captures)
 
 require("nvim-treesitter.configs").setup {
