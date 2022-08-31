@@ -8,6 +8,8 @@ opt.foldmethod = 'expr'
 opt.foldexpr = 'nvim_treesitter#foldexpr()'
 g.showbreak = '↳ '
 opt.clipboard = 'unnamedplus'
+opt.background = 'dark'
+g.one_allow_italics = '1'
 vim.cmd([[
 set tabstop=2
 set shiftwidth=2
@@ -20,7 +22,7 @@ set complete+=kspell
 set completeopt=menuone,longest
 set exrc
 set cursorline
-set relativenumber
+"set relativenumber
 set nu
 set nohlsearch
 set mouse=a
@@ -41,7 +43,6 @@ set incsearch
 set termguicolors
 set scrolloff=2
 set noshowmode
-set number
 set updatetime=200
 set encoding=UTF-8
 set nojoinspaces
@@ -53,7 +54,6 @@ set ttyfast
 set lazyredraw
 set laststatus=3
 let g:sneak#label = 1
-highlight Comment cterm=italic gui=italic
 syntax on
-colorscheme everblush
+colorscheme one
 ]])

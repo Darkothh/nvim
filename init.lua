@@ -1,3 +1,4 @@
+pcall(require, "impatient")
 require("core.config")
 require("core.lsp.init")
 require("core.maps")

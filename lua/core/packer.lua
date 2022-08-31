@@ -9,7 +9,7 @@ vim.cmd([[
 
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-return
+  return
 end
 
 packer.init({
@@ -22,9 +22,28 @@ return require('packer').startup(function(use)
 
   use 'wbthomason/packer.nvim'
 
+  use 'lewis6991/impatient.nvim'
+
   use 'tpope/vim-commentary'
 
-  use { 'Everblush/everblush.nvim', as = 'everblush' }
+  use 'rcarriga/nvim-notify'
+
+
+  use { 'anuvyklack/pretty-fold.nvim',
+    config = function()
+      require('core.plug.fold')
+    end,
+    requires = {
+      'anuvyklack/fold-preview.nvim',
+      'anuvyklack/keymap-amend.nvim'
+    }
+  }
+
+  use { 'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('core.plug.colorizer')
+    end
+  }
 
   use {
     'kyazdani42/nvim-tree.lua',
@@ -36,17 +55,29 @@ return require('packer').startup(function(use)
       require('core.plug.nvim-tree')
     end,
   }
+
+  -- Colorshemes
+  use { 'Everblush/everblush.nvim', as = 'everblush' }
+  use 'rakr/vim-one'
+
+-- GitHub{{{
+  use { 'lewis6991/gitsigns.nvim',
+  config = function ()
+    require('core.plug.gitsigns')
+  end
+}
+-- }}}
+
   -- Status Line and Tabs
   use {
     'nvim-lualine/lualine.nvim',
     requires = {
       { 'kyazdani42/nvim-web-devicons', opt = true },
-      {'akinsho/bufferline.nvim',
-      tag = "v2.*",
-      config = function()
-        require("bufferline").setup{}
-      end,
-    },
+      { 'romgrk/barbar.nvim',
+        config = function()
+          require("core.plug.barbar")
+        end,
+      },
     },
     config = function()
       require('core.plug.lualine')
@@ -66,14 +97,14 @@ return require('packer').startup(function(use)
     requires = { 'p00f/nvim-ts-rainbow' },
     run = ':TSUpdate',
     config = function()
-    require('core.plug.treesitter')
+      require('core.plug.treesitter')
     end,
   }
 
-  -- Autocomplete and lsp
+-- Autocomplete and lsp {{{
   use {
     'hrsh7th/nvim-cmp',
-    config = function ()
+    config = function()
       require("core.plug.cmp")
     end,
   }
@@ -88,5 +119,5 @@ return require('packer').startup(function(use)
   -- lsp
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
-
+-- }}}
 end)

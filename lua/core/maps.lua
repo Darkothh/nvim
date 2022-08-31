@@ -43,9 +43,13 @@ vim.keymap.set("n", "<c-q>", function()
       write
       q
       ]])
+    else
+      cmd([[
+      q!
+      ]])
     end
   end
-end, { desc = "my hello world" })
+end, { desc = "Pregunta si quieres guardar antes de salir si el buffer no está guardado" })
 
 -- Nvim
 nmap('ss', ':split<Return><C-w>w')
