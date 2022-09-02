@@ -17,6 +17,16 @@ map('', '<c-u>', ':PackerSync<cr>')
 map('', '<c-i>', ':PackerInstall<cr>')
 map('', '<c-c>', ':PackerCompile<cr>')
 
+-- nmap(',r', '<cmd>luafile dev/init.lua<cr>')
+-- nmap(',w', '<cmd>lua Reload_and_run()<cr>')
+
+-- Telescope
+nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
+nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
+nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
+nmap('<leader>fh', '<cmd>Telescope help_tags<cr>')
+nmap('<leader>fk', '<cmd>Telescope keymaps<cr>')
+
 -- Nvim Tree
 nmap('<c-b>', ':NvimTreeToggle<cr>')
 nmap('<leader>ef', ':NvimTreeFindFile<cr>')
@@ -26,37 +36,13 @@ nmap('<c-f>', ':Format<cr>')
 -- Commentary
 map('', '<leader>/', ':Commentary<cr>')
 
-
-vim.keymap.set("n", "<c-q>", function()
-  local cmd = vim.cmd
-  cmd([[
-  try
-  q
-  catch 
-  echo "Error " . v:exception
-  endtry
-  ]])
-
-  if cmd then
-    if vim.fn.input "Quieres guardar y salir? (s = si)" == "s" then
-      cmd([[
-      write
-      q
-      ]])
-    else
-      cmd([[
-      q!
-      ]])
-    end
-  end
-end, { desc = "Pregunta si quieres guardar antes de salir si el buffer no está guardado" })
-
 -- Nvim
 nmap('ss', ':split<Return><C-w>w')
 nmap('sv', ':vsplit=<Return><C-w>w')
 map('', '<F5>', ':set nowrap!<cr>')
 imap(',,', '<Esc>')
 map('', '<c-s>', ':w<cr>')
+map('', '<c-q>', ':q<cr>')
 map('', '<c-r>', ':source %<cr>')
 nmap('dw', 'vb"_d')
 nmap('U', '<cmd>redo<cr>')

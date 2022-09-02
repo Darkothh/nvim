@@ -1,14 +1,13 @@
 local g = vim.g
-local opt = vim.opt
+local o = vim.opt
 
-
-opt.linebreak = true
-opt.breakindent = true
-opt.foldmethod = 'expr'
-opt.foldexpr = 'nvim_treesitter#foldexpr()'
-g.showbreak = '↳ '
-opt.clipboard = 'unnamedplus'
-opt.background = 'dark'
+o.linebreak = true
+o.breakindent = true
+o.foldmethod = 'expr'
+o.foldexpr = 'nvim_treesitter#foldexpr()'
+o.showbreak = '↳ '
+o.clipboard = 'unnamedplus'
+o.background = 'dark'
 g.one_allow_italics = '1'
 vim.cmd([[
 set tabstop=2
@@ -22,7 +21,6 @@ set complete+=kspell
 set completeopt=menuone,longest
 set exrc
 set cursorline
-"set relativenumber
 set nu
 set nohlsearch
 set mouse=a
@@ -57,3 +55,7 @@ let g:sneak#label = 1
 syntax on
 colorscheme one
 ]])
+
+-- Commands
+vim.cmd 'command! Config edit $MYVIMRC'
+vim.cmd 'command! ConfigReload luafile $MYVIMRC'

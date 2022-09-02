@@ -24,10 +24,39 @@ return require('packer').startup(function(use)
 
   use 'lewis6991/impatient.nvim'
 
+  use '~/Documents/Projects/prueba.nvim'
+  -- use 'dylanfierro/live-server.nvim'
+
+  use { 'andweeb/presence.nvim',
+  config = function ()
+    require('core.plug.presence')
+  end
+}
+
   use 'tpope/vim-commentary'
 
   use 'rcarriga/nvim-notify'
 
+  use { 'akinsho/toggleterm.nvim',
+    config = function()
+      require("core.plug.terminal")
+    end
+  }
+
+  -- File Search
+  use { 'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-lua/popup.nvim'
+    },
+    config = function()
+      require('core.plug.telescope')
+    end
+  }
+
+  -- Colorshemes
+  use { 'Everblush/everblush.nvim', as = 'everblush' }
+  use 'rakr/vim-one'
 
   use { 'anuvyklack/pretty-fold.nvim',
     config = function()
@@ -56,17 +85,13 @@ return require('packer').startup(function(use)
     end,
   }
 
-  -- Colorshemes
-  use { 'Everblush/everblush.nvim', as = 'everblush' }
-  use 'rakr/vim-one'
-
--- GitHub{{{
+  -- GitHub{{{
   use { 'lewis6991/gitsigns.nvim',
-  config = function ()
-    require('core.plug.gitsigns')
-  end
-}
--- }}}
+    config = function()
+      require('core.plug.gitsigns')
+    end
+  }
+  -- }}}
 
   -- Status Line and Tabs
   use {
@@ -101,7 +126,7 @@ return require('packer').startup(function(use)
     end,
   }
 
--- Autocomplete and lsp {{{
+  -- Autocomplete and lsp {{{
   use {
     'hrsh7th/nvim-cmp',
     config = function()
@@ -119,5 +144,5 @@ return require('packer').startup(function(use)
   -- lsp
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
--- }}}
+  -- }}}
 end)
