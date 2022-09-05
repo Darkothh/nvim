@@ -13,9 +13,12 @@ end
 vim.g.mapleader = " "
 
 -- Packer
-map('', '<c-u>', ':PackerSync<cr>')
-map('', '<c-i>', ':PackerInstall<cr>')
-map('', '<c-c>', ':PackerCompile<cr>')
+map('', '<leader>s', ':PackerSync<cr>')
+map('', '<leader>i', ':PackerInstall<cr>')
+map('', '<leader>C', ':PackerCompile<cr>')
+
+-- nmap(',t',  '<Plug>PlenaryTestFile')
+nmap('<leader>t', '<Plug>PlenaryTestFile')
 
 -- nmap(',r', '<cmd>luafile dev/init.lua<cr>')
 -- nmap(',w', '<cmd>lua Reload_and_run()<cr>')

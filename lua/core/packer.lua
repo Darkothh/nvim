@@ -24,14 +24,24 @@ return require('packer').startup(function(use)
 
   use 'lewis6991/impatient.nvim'
 
+  use 'nvim-lua/plenary.nvim'
+
+  use {
+    'stevearc/aerial.nvim',
+    config = function()
+      require("core.plug.aerial")
+    end
+  }
+
   use '~/Documents/Projects/prueba.nvim'
+  -- use 'dylanfierro/core.nvim'
   -- use 'dylanfierro/live-server.nvim'
 
   use { 'andweeb/presence.nvim',
-  config = function ()
-    require('core.plug.presence')
-  end
-}
+    config = function()
+      require('core.plug.presence')
+    end
+  }
 
   use 'tpope/vim-commentary'
 
@@ -46,7 +56,6 @@ return require('packer').startup(function(use)
   -- File Search
   use { 'nvim-telescope/telescope.nvim',
     requires = {
-      'nvim-lua/plenary.nvim',
       'nvim-lua/popup.nvim'
     },
     config = function()
@@ -54,9 +63,12 @@ return require('packer').startup(function(use)
     end
   }
 
-  -- Colorshemes
+  -- Themes
+  use 'projekt0n/github-nvim-theme'
   use { 'Everblush/everblush.nvim', as = 'everblush' }
   use 'rakr/vim-one'
+
+  use 'sainnhe/everforest'
 
   use { 'anuvyklack/pretty-fold.nvim',
     config = function()
@@ -73,6 +85,15 @@ return require('packer').startup(function(use)
       require('core.plug.colorizer')
     end
   }
+
+  -- Preview
+  use({ "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  })
 
   use {
     'kyazdani42/nvim-tree.lua',
@@ -145,4 +166,5 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
   -- }}}
+
 end)

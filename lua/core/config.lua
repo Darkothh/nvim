@@ -3,13 +3,24 @@ local o = vim.opt
 
 o.linebreak = true
 o.breakindent = true
-o.foldmethod = 'expr'
-o.foldexpr = 'nvim_treesitter#foldexpr()'
 o.showbreak = '↳ '
 o.clipboard = 'unnamedplus'
-o.background = 'dark'
-g.one_allow_italics = '1'
+require("github-theme").setup({
+  theme_style = "dark",
+  comment_style = 'italic',
+  function_style = "italic",
+  sidebars = {"qf", "vista_kind", "terminal", "packer"},
+  colors = {hint = "white", error = "#ff0000"},
+
+  overrides = function(c)
+    return {
+      DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
+      TSField = {},
+    }
+  end
+})
 vim.cmd([[
+autocmd FileType * set fo-=c fo-=r fo-=o " Disable continuation of comments to the next line
 set tabstop=2
 set shiftwidth=2
 set ai
@@ -53,7 +64,6 @@ set lazyredraw
 set laststatus=3
 let g:sneak#label = 1
 syntax on
-colorscheme one
 ]])
 
 -- Commands
