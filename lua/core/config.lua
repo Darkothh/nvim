@@ -5,21 +5,43 @@ o.linebreak = true
 o.breakindent = true
 o.showbreak = '↳ '
 o.clipboard = 'unnamedplus'
-require("github-theme").setup({
-  theme_style = "dark",
-  comment_style = 'italic',
-  function_style = "italic",
-  sidebars = {"qf", "vista_kind", "terminal", "packer"},
-  colors = {hint = "white", error = "#ff0000"},
-
-  overrides = function(c)
-    return {
-      DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
-      TSField = {},
-    }
-  end
+o.background = 'dark'
+require('nvim-tundra').setup({
+  transparent_background = false,
+  editor = {
+    search = {},
+    substitute = {},
+  },
+  plugins = {
+    lsp = true,
+    treesitter = true,
+    cmp = true,
+    context = true,
+    dbui = true,
+    gitsigns = true,
+    telescope = true,
+  },
+  overwrite = {
+    colors = {},
+    highlights = {},
+  },
 })
+-- require("github-theme").setup({
+--   theme_style = "dark",
+--   comment_style = 'italic',
+--   function_style = "italic",
+--   sidebars = {"qf", "vista_kind", "terminal", "packer"},
+--   colors = {hint = "white", error = "#ff0000"},
+
+--   overrides = function(c)
+--     return {
+--       DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
+--       TSField = {},
+--     }
+--   end
+-- })
 vim.cmd([[
+colorscheme tundra
 autocmd FileType * set fo-=c fo-=r fo-=o " Disable continuation of comments to the next line
 set tabstop=2
 set shiftwidth=2
@@ -52,7 +74,7 @@ set incsearch
 set termguicolors
 set scrolloff=2
 set noshowmode
-set updatetime=200
+set updatetime=100
 set encoding=UTF-8
 set nojoinspaces
 set showcmd

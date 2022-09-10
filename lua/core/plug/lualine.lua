@@ -17,26 +17,21 @@ local colors = {
 require('lualine').setup {
   options = {
     globalstatus = true,
-    theme = 'everblush',
+    theme = 'auto',
   },
   sections = {
     lualine_a = { "mode" },
     lualine_b = {
       {
-        'branch',
-        icon = '',
-        color = { fg = colors.violet, gui = 'bold' },
-      },
-      {
         "filename",
-        path = 0,
+        path = 1,
         separator = vim.trim(breadcrump_sep),
         fmt = function(str)
           local path_separator = package.config:sub(1, 1)
           return str:gsub(path_separator, breadcrump_sep)
         end
       },
-      { "aerial", sep = breadcrump_sep },
+      -- { "aerial", dense = true, sep = breadcrump_sep },
     },
     lualine_c = {},
     lualine_x = {},
@@ -68,6 +63,11 @@ require('lualine').setup {
           color_warn = { fg = colors.yellow },
           color_info = { fg = colors.cyan },
         },
+      },
+      {
+        'branch',
+        icon = '',
+        color = { fg = colors.violet, gui = 'bold' },
       },
     },
     lualine_z = { "location" },

@@ -16,9 +16,13 @@ vim.g.mapleader = " "
 map('', '<leader>s', ':PackerSync<cr>')
 map('', '<leader>i', ':PackerInstall<cr>')
 map('', '<leader>C', ':PackerCompile<cr>')
-
+-- LSP
+map('', '<leader>tl', '<cmd>lua require("lsp_lines").toggle()<cr>')
 -- nmap(',t',  '<Plug>PlenaryTestFile')
-nmap('<leader>t', '<Plug>PlenaryTestFile')
+-- nmap('<leader>t', '<Plug>PlenaryTestFile')
+
+nmap('<leader>t', ':ServerRun<cr>')
+nmap('<leader>tt', ':ServerToggle<cr>')
 
 -- nmap(',r', '<cmd>luafile dev/init.lua<cr>')
 -- nmap(',w', '<cmd>lua Reload_and_run()<cr>')

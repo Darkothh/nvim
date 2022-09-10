@@ -8,11 +8,11 @@ if not lspconfig_status_ok then
   return
 end
 
-lsp_installer.setup{}
+lsp_installer.setup {}
 
 local opts = {
-  on_attach = require("core.lsp.handlers").on_attach,
-  capabilities = require("core.lsp.handlers").capabilities,
+  on_attach = require("core.plug.lsp.handlers").on_attach,
+  capabilities = require("core.plug.lsp.handlers").capabilities,
 }
 
 lspconfig.sumneko_lua.setup {
@@ -38,7 +38,7 @@ lspconfig.tsserver.setup {
   capabilities = opts.capabilities,
 }
 
-lspconfig.html.setup{
+lspconfig.html.setup {
   on_attach = opts.on_attach,
   capabilities = opts.capabilities,
 }
@@ -53,6 +53,16 @@ lspconfig.vimls.setup {
   capabilities = opts.capabilities,
 }
 
-lspconfig.emmet_ls.setup{
-  filetypes = {'html'},
+lspconfig.emmet_ls.setup {
+  filetypes = { 'html' },
+}
+
+lspconfig.stylelint_lsp.setup {
+  settings = {
+    stylelintplus = {
+      autoFixOnSave = true,
+      autoFixOnFormat = true,
+      -- other settings...
+    }
+  },
 }

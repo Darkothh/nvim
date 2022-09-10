@@ -1,6 +1,7 @@
 pcall(require, "impatient")
 require("core.globals")
+require("core.plug.core")
 require("core.config")
-require("core.lsp.init")
+require("core.plug.lsp.init")
 require("core.maps")
 require("core.packer")
