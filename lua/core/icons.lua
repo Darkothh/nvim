@@ -36,6 +36,7 @@ return {
     text = "",
     text2 = "",
     ghost = "",
+    skull = "ﮊ",
   },
   sep = {
     rightBub = '',
