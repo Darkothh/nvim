@@ -1,4 +1,4 @@
-local g = vim.g
+-- local g = vim.g
 local o = vim.opt
 
 o.linebreak = true
@@ -6,40 +6,9 @@ o.breakindent = true
 o.showbreak = '↳ '
 o.clipboard = 'unnamedplus'
 o.background = 'dark'
-require('nvim-tundra').setup({
-  transparent_background = false,
-  editor = {
-    search = {},
-    substitute = {},
-  },
-  plugins = {
-    lsp = true,
-    treesitter = true,
-    cmp = true,
-    context = true,
-    dbui = true,
-    gitsigns = true,
-    telescope = true,
-  },
-  overwrite = {
-    colors = {},
-    highlights = {},
-  },
-})
--- require("github-theme").setup({
---   theme_style = "dark",
---   comment_style = 'italic',
---   function_style = "italic",
---   sidebars = {"qf", "vista_kind", "terminal", "packer"},
---   colors = {hint = "white", error = "#ff0000"},
-
---   overrides = function(c)
---     return {
---       DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
---       TSField = {},
---     }
---   end
--- })
+o.fillchars = {
+  vert = '▎',
+}
 vim.cmd([[
 colorscheme tundra
 autocmd FileType * set fo-=c fo-=r fo-=o " Disable continuation of comments to the next line
@@ -87,7 +56,40 @@ set laststatus=3
 let g:sneak#label = 1
 syntax on
 ]])
+require('nvim-tundra').setup({
+  transparent_background = false,
+  editor = {
+    search = {},
+    substitute = {},
+  },
+  plugins = {
+    lsp = true,
+    treesitter = true,
+    cmp = true,
+    context = true,
+    dbui = true,
+    gitsigns = true,
+    telescope = false,
+  },
+  overwrite = {
+    colors = {},
+    highlights = {},
+  },
+})
+-- require("github-theme").setup({
+--   theme_style = "dark",
+--   comment_style = 'italic',
+--   function_style = "italic",
+--   sidebars = {"qf", "vista_kind", "terminal", "packer"},
+--   colors = {hint = "white", error = "#ff0000"},
 
+--   overrides = function(c)
+--     return {
+--       DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
+--       TSField = {},
+--     }
+--   end
+-- })
 -- Commands
 vim.cmd 'command! Config edit $MYVIMRC'
 vim.cmd 'command! ConfigReload luafile $MYVIMRC'

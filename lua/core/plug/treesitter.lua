@@ -39,24 +39,20 @@ require("nvim-treesitter.configs").setup {
     "python",
     "typescript",
   },
-
   highlight = {
     enable = true,
-    use_languagetree = false,
+    use_languagetree = true,
     disable = { "html", "css" },
     custom_captures = custom_captures,
   },
-
   rainbow = {
     enable = true,
     extend_mode = true,
     max_file_lines = nil,
   },
-
   refactor = {
     highlight_definitions = { enable = true },
     highlight_current_scope = { enable = false },
-
     smart_rename = {
       enable = false,
       keymaps = {
@@ -64,7 +60,6 @@ require("nvim-treesitter.configs").setup {
         smart_rename = "grr",
       },
     },
-
     navigation = {
       enable = false,
       keymaps = {
@@ -73,7 +68,6 @@ require("nvim-treesitter.configs").setup {
       },
     },
   },
-
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -83,22 +77,18 @@ require("nvim-treesitter.configs").setup {
       scope_incremental = "<M-e>", -- increment to the upper scope (as defined in locals.scm)
     },
   },
-
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
-
     config = {
       c = "// %s",
       lua = "-- %s",
     },
   },
-
   textobjects = {
     move = {
       enable = true,
       set_jumps = true,
-
       goto_next_start = {
         ["]p"] = "@parameter.inner",
         ["]m"] = "@function.outer",
@@ -118,24 +108,20 @@ require("nvim-treesitter.configs").setup {
         ["[]"] = "@class.outer",
       },
     },
-
     select = {
       enable = true,
       keymaps = {
         ["af"] = "@function.outer",
         ["if"] = "@function.inner",
-
         ["ac"] = "@conditional.outer",
         ["ic"] = "@conditional.inner",
-
         ["aa"] = "@parameter.outer",
         ["ia"] = "@parameter.inner",
-
         ["av"] = "@variable.outer",
         ["iv"] = "@variable.inner",
       },
     },
-    indent = { enable = false },
+    indent = { enable = true },
     autopairs = { enable = true },
     autotag = { enable = true },
     swap = {

@@ -21,10 +21,15 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'lewis6991/impatient.nvim'
   use 'nvim-lua/plenary.nvim'
+  use { 'fgheng/winbar.nvim',
+    config = function()
+      require("core.plug.winbar")
+    end
+  }
   use { 'lukas-reineke/indent-blankline.nvim',
-  config = function ()
-    require('core.plug.lines')
-  end
+    config = function()
+      require('core.plug.lines')
+    end
   }
   use {
     'stevearc/aerial.nvim',
@@ -33,10 +38,8 @@ return require('packer').startup(function(use)
     end
   }
   use '~/Documents/Projects/prueba.nvim'
-
   -- use 'dylanfierro/core.nvim'
   -- use 'dylanfierro/live-server.nvim'
-
   use { 'andweeb/presence.nvim',
     config = function()
       require('core.plug.presence')
@@ -117,12 +120,12 @@ return require('packer').startup(function(use)
       require('core.plug.lualine')
     end,
   }
-  use {
-    'windwp/nvim-autopairs',
-    config = function()
-      require('core.plug.autopairs')
-    end,
-  }
+  -- use {
+  --   'windwp/nvim-autopairs',
+  --   config = function()
+  --     require('core.plug.autopairs')
+  --   end,
+  -- }
   -- Highlight
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -152,7 +155,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'saadparwaiz1/cmp_luasnip'
-  use "rafamadriz/friendly-snippets"
+  -- use "rafamadriz/friendly-snippets"
   use 'L3MON4D3/LuaSnip'
   use 'jose-elias-alvarez/null-ls.nvim'
   -- lsp

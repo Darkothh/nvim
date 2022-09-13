@@ -21,7 +21,7 @@ nmap('<A-c>', '<cmd>BufferClose<cr>')
 nmap('<A-<>', '<Cmd>BufferMovePrevious<CR>')
 nmap('<A->>', '<Cmd>BufferMoveNext<CR>')
 
-require'bufferline'.setup {
+require 'bufferline'.setup {
   animation = true,
   auto_hide = false,
   tabpages = true,
