@@ -36,7 +36,9 @@ local bubbles_theme = {
     a = { fg = colors.black, bg = colors.red },
   },
 }
+local navic = require("nvim-navic")
 local ll = require('lualine')
+
 ll.setup {
   options = {
     globalstatus = true,
@@ -51,6 +53,7 @@ ll.setup {
         'mode',
         padding = { right = 1, left = 1 }
       },
+      -- { navic.get_location, cond = navic.is_available },
       { function()
         return '﮼'
       end,
