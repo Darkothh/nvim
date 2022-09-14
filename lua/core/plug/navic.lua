@@ -66,5 +66,5 @@ vim.api.nvim_set_hl(0, "NavicIconsStruct",        {default = true,  fg = "#D70FF
 vim.api.nvim_set_hl(0, "NavicIconsEvent",         {default = true,  fg = "#D70FFF"})
 vim.api.nvim_set_hl(0, "NavicIconsOperator",      {default = true,  fg = "#D70FFF"})
 vim.api.nvim_set_hl(0, "NavicIconsTypeParameter", {default = true,  fg = "#D70FFF"})
-vim.api.nvim_set_hl(0, "NavicText",               {default = true,  fg = "#ffffff"})
+-- vim.api.nvim_set_hl(0, "NavicText",               {default = true,  fg = "#ffffff"})
 -- vim.api.nvim_set_hl(0, "NavicSeparator",          {default = true,  fg = "#D70FFF"})

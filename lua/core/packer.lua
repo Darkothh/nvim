@@ -171,7 +171,7 @@ packer.startup {
     -- }}}
   end,
   config = {
-    compile_path = vim.fn.stdpath('config') .. '/packerC/packerComp.lua',
+    compile_path = vim.fn.stdpath('config') .. '/lua/core/packerC/packerComp.lua',
     display = {
       open_fn = require('packer.util').float,
     },
