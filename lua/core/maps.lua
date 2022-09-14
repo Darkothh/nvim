@@ -16,6 +16,13 @@ vim.g.mapleader = " "
 map('', '<leader>s', ':PackerSync<cr>')
 map('', '<leader>i', ':PackerInstall<cr>')
 map('', '<leader>C', ':PackerCompile<cr>')
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+nmap('<C-l>', '<c-w>l')
+nmap('<C-k>', '<c-w>k')
+nmap('<C-j>', '<c-w>j')
+nmap('<C-h>', '<c-w>h')
+-- map("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>")
 -- LSP
 map('', '<leader>tl', '<cmd>lua require("lsp_lines").toggle()<cr>')
 -- nmap(',t',  '<Plug>PlenaryTestFile')

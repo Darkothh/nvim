@@ -13,6 +13,11 @@ packer.startup {
     use 'wbthomason/packer.nvim'
     use 'lewis6991/impatient.nvim'
     use 'nvim-lua/plenary.nvim'
+    use { 'ziontee113/color-picker.nvim',
+      config = function ()
+        require("core.plug.colorPicker")
+      end
+    }
     use { 'goolord/alpha-nvim',
       config = function()
         require("core.plug.alpha")

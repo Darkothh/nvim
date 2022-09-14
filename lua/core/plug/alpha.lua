@@ -27,7 +27,7 @@ dashboard.section.buttons.val = {
   button("r", icons.ui.History .. " Recent files", ":Telescope oldfiles <CR>"),
   button("t", icons.ui.List .. " Find text", ":Telescope live_grep <CR>"),
   -- button("s", icons.ui.SignIn .. " Find Session", ":SearchSession<CR>"),
-  button("c", icons.ui.Gear .. " Config", ":e C:/Users/Dylan/AppData/Local/nvim/init.lua <CR>"),
+  button("c", icons.ui.Gear .. " Config", ":e C:/Users/Dylan/AppData/Local/nvim/lua/core/config.lua <CR>"),
   button("u", icons.ui.CloudDownload .. " Update", ":PackerSync<CR>"),
   button("q", icons.ui.SignOut .. " Quit", ":qa<CR>"),
 }
@@ -44,6 +44,7 @@ dashboard.section.buttons.val = {
 dashboard.section.header.opts.hl = "Include"
 dashboard.section.buttons.opts.hl = "Macro"
 -- dashboard.section.footer.opts.hl = "Type"
+require("core.winbar")
 
 dashboard.opts.opts.noautocmd = true
 alpha.setup(dashboard.opts)
