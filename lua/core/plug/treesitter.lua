@@ -45,6 +45,7 @@ require("nvim-treesitter.configs").setup {
     disable = { "html", "css" },
     custom_captures = custom_captures,
   },
+  markid = { enable = true },
   rainbow = {
     enable = true,
     extend_mode = true,

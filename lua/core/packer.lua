@@ -13,6 +13,8 @@ packer.startup {
     use 'wbthomason/packer.nvim'
     use 'lewis6991/impatient.nvim'
     use 'nvim-lua/plenary.nvim'
+    use "karb94/neoscroll.nvim"
+    use 'David-Kunz/markid'
     use { 'ziontee113/color-picker.nvim',
       config = function ()
         require("core.plug.colorPicker")

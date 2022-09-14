@@ -50,7 +50,7 @@ vim.api.nvim_set_hl(0, "NavicIconsProperty",      {default = true,  fg = "#70A9A
 vim.api.nvim_set_hl(0, "NavicIconsField",         {default = true,  fg = "#F78764"})
 vim.api.nvim_set_hl(0, "NavicIconsConstructor",   {default = true,  fg = "#F4D35E"})
 vim.api.nvim_set_hl(0, "NavicIconsEnum",          {default = true,  fg = "#DA4167"})
-vim.api.nvim_set_hl(0, "NavicIconsInterface",     {default = true,  fg = "#083D77"})
+vim.api.nvim_set_hl(0, "NavicIconsInterface",     {default = true,  fg = "#0055a0"})
 vim.api.nvim_set_hl(0, "NavicIconsFunction",      {default = true,  fg = "#04A777"})
 vim.api.nvim_set_hl(0, "NavicIconsVariable",      {default = true,  fg = "#820263"})
 vim.api.nvim_set_hl(0, "NavicIconsConstant",      {default = true,  fg = "#D90368"})
