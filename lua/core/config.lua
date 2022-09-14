@@ -9,6 +9,26 @@ o.background = 'dark'
 o.fillchars = {
   vert = '▎',
 }
+require('nvim-tundra').setup({
+  transparent_background = false,
+  editor = {
+    search = {},
+    substitute = {},
+  },
+  plugins = {
+    lsp = true,
+    treesitter = true,
+    cmp = true,
+    context = true,
+    dbui = true,
+    gitsigns = true,
+    telescope = false,
+  },
+  overwrite = {
+    colors = {},
+    highlights = {},
+  },
+})
 vim.cmd([[
 colorscheme tundra
 autocmd FileType * set fo-=c fo-=r fo-=o " Disable continuation of comments to the next line
@@ -56,26 +76,6 @@ set laststatus=3
 let g:sneak#label = 1
 syntax on
 ]])
-require('nvim-tundra').setup({
-  transparent_background = false,
-  editor = {
-    search = {},
-    substitute = {},
-  },
-  plugins = {
-    lsp = true,
-    treesitter = true,
-    cmp = true,
-    context = true,
-    dbui = true,
-    gitsigns = true,
-    telescope = false,
-  },
-  overwrite = {
-    colors = {},
-    highlights = {},
-  },
-})
 -- require("github-theme").setup({
 --   theme_style = "dark",
 --   comment_style = 'italic',

@@ -20,6 +20,7 @@ map('', '<leader>C', ':PackerCompile<cr>')
 map('', '<leader>tl', '<cmd>lua require("lsp_lines").toggle()<cr>')
 -- nmap(',t',  '<Plug>PlenaryTestFile')
 -- nmap('<leader>t', '<Plug>PlenaryTestFile')
+nmap('<leader>a', ':Alpha<cr>')
 
 nmap('<leader>t', ':ServerRun<cr>')
 nmap('<leader>tt', ':ServerToggle<cr>')

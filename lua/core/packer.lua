@@ -8,11 +8,16 @@ vim.cmd([[
 
 local packer = require("packer")
 
-  packer.startup {
+packer.startup {
   function(use)
     use 'wbthomason/packer.nvim'
     use 'lewis6991/impatient.nvim'
     use 'nvim-lua/plenary.nvim'
+    use { 'goolord/alpha-nvim',
+      config = function()
+        require("core.plug.alpha")
+      end
+    }
     use { 'SmiteshP/nvim-gps',
       config = function()
         require "core.plug.gps"
@@ -122,12 +127,12 @@ local packer = require("packer")
         require('core.plug.lualine')
       end,
     }
-    -- use {
-    --   'windwp/nvim-autopairs',
-    --   config = function()
-    --     require('core.plug.autopairs')
-    --   end,
-    -- }
+    use {
+      'windwp/nvim-autopairs',
+      config = function()
+        require('core.plug.autopairs')
+      end,
+    }
     -- Highlight
     use {
       'nvim-treesitter/nvim-treesitter',
@@ -166,7 +171,7 @@ local packer = require("packer")
     -- }}}
   end,
   config = {
-      compile_path = vim.fn.stdpath('config') .. '/prueba/packer_compiled.lua',
+    compile_path = vim.fn.stdpath('config') .. '/packerC/packerComp.lua',
     display = {
       open_fn = require('packer.util').float,
     },

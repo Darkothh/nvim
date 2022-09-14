@@ -62,6 +62,7 @@ ll.setup {
       },
     },
     lualine_b = {
+      { 'filetype' },
       {
         'diff',
         symbols = { added = ' ', modified = ' ', removed = ' ' },
