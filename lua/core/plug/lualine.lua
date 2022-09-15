@@ -62,7 +62,11 @@ ll.setup {
       },
     },
     lualine_b = {
-      { 'filetype' },
+      {
+        'branch',
+        icon = '',
+        color = { fg = colors.violet, gui = 'bold' },
+      },
       {
         'diff',
         symbols = { added = ' ', modified = ' ', removed = ' ' },
@@ -87,11 +91,7 @@ ll.setup {
           color_info = { fg = colors.cyan },
         },
       },
-            {
-        'branch',
-        icon = '',
-        color = { fg = colors.violet, gui = 'bold' },
-      },
+      { 'filetype' },
     },
     lualine_z = {
       {

@@ -1,7 +1,6 @@
 pcall(require, "impatient")
 require("core.globals")
 require("core.plug.core")
-require("core.bfs")
 require("core.plug.neoS")
 require("core.config")
 require("core.plug.lsp.init")
