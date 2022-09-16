@@ -15,6 +15,11 @@ local opts = {
   capabilities = require("core.plug.lsp.handlers").capabilities,
 }
 
+lspconfig.jdtls.setup {
+  -- on_attach = opts.on_attach,
+  -- capabilities = opts.capabilities
+}
+
 lspconfig.sumneko_lua.setup {
   on_attach = opts.on_attach,
   capabilities = opts.capabilities,

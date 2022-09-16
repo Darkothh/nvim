@@ -15,6 +15,13 @@ packer.startup {
     use 'nvim-lua/plenary.nvim'
     use "karb94/neoscroll.nvim"
     use 'David-Kunz/markid'
+    use {'mfussenegger/nvim-dap',
+    requires = { 'rcarriga/nvim-dap-ui' },
+    config = function ()
+      require("core.plug.dap")
+    end
+  }
+    use 'mfussenegger/nvim-jdtls'
     use { 'ziontee113/color-picker.nvim',
       config = function ()
         require("core.plug.colorPicker")
