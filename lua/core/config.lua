@@ -7,7 +7,13 @@ o.showbreak = '↳ '
 o.clipboard = 'unnamedplus'
 o.background = 'dark'
 o.fillchars = {
-  vert = '▎',
+  horiz = '━',
+  horizup = '┻',
+  horizdown = '┳',
+  vert = '┃',
+  vertleft = '┫',
+  vertright = '┣',
+  verthoriz = '╋',
 }
 require('nvim-tundra').setup({
   transparent_background = false,

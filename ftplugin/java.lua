@@ -26,6 +26,7 @@ CONFIG = "win"
 
 -- Find root of project
 local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
+
 local root_dir = require("jdtls.setup").find_root(root_markers)
 if root_dir == "" then
   return
@@ -35,30 +36,9 @@ local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
 
--- JAVA_DAP_ACTIVE = true
 
--- local bundles = {}
-
--- if JAVA_DAP_ACTIVE then
---   vim.list_extend(bundles, vim.split(vim.fn.glob(nvhome .. "/vscode-java-test/server/*.jar"), "\n"))
---   vim.list_extend(
---     bundles,
---     vim.split(
---       vim.fn.glob(
---         nvhome .. "/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
---       ),
---       "\n"
---     )
---   )
--- end
-
--- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
-  -- The command that starts the language server
-  -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
   cmd = {
-
-    -- 💀
     "java", -- or '/path/to/java11_or_newer/bin/java'
     -- depends on if `java` is in your $PATH env variable and if it points to the right version.
 
@@ -75,29 +55,22 @@ local config = {
     "--add-opens",
     "java.base/java.lang=ALL-UNNAMED",
 
-    -- 💀
     "-jar",
     vim.fn.glob(nvhome ..
       "/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_*.jar"),
-    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
-    -- Must point to the                                                     Change this to
     -- eclipse.jdt.ls installation                                           the actual version
 
-    -- 💀
     "-configuration",
     nvhome .. "/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_win",
-    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
     -- Must point to the                      Change to one of `linux`, `win` or `mac`
     -- eclipse.jdt.ls installation            Depending on your system.
 
-    -- 💀
-    -- See `data directory configuration` section in the README
     "-data",
     workspace_dir,
   },
 
   on_attach = require("core.plug.lsp.handlers").on_attach,
-  capabilities = capabilities,
+  capabilities = require("core.plug.lsp.handlers").capabilities,
 
   -- 💀
   -- This is the default if not provided, you can remove it. Or adjust as needed.
@@ -184,17 +157,18 @@ local config = {
   -- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
   --
   -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
-  -- init_options = {
-  --   bundles = {
-  --     vim.fn.glob(nvhome .. "/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
-  --   };
-  -- },
+  init_options = {
+    bundles = {
+      vim.fn.glob(nvhome .. "/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
+    };
+  },
 }
-config['init_options'] = {
-  bundles = {
-    vim.fn.glob("path/to/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
-  };
-}
+
+-- config['init_options'] = {
+--   bundles = {
+--     vim.fn.glob(nvhome .. "/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
+--   };
+-- }
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
 jdtls.start_or_attach(config)
