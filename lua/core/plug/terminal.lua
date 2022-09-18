@@ -10,6 +10,6 @@ require("toggleterm").setup{
   persist_mode = true,
   direction = 'vertical',
   close_on_exit = true, -- close the terminal window when the process exits
-  shell = "pwsh.exe", -- change the default shell
+  shell = "zsh", -- change the default shell
   size = 65,
 }

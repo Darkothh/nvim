@@ -58,7 +58,7 @@ packer.startup {
         require("core.plug.aerial")
       end
     }
-    use '~/Documents/Projects/prueba.nvim'
+    -- use '~/Documents/Projects/prueba.nvim'
     -- use 'dylanfierro/core.nvim'
     -- use 'dylanfierro/live-server.nvim'
     use { 'andweeb/presence.nvim',

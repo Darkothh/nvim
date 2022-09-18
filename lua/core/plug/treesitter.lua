@@ -37,6 +37,7 @@ require("nvim-treesitter.configs").setup {
     "json",
     "markdown",
     "python",
+    "bash",
     "typescript",
   },
   highlight = {
