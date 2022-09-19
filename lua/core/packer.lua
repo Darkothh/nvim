@@ -15,6 +15,8 @@ packer.startup {
     use 'nvim-lua/plenary.nvim'
     use "karb94/neoscroll.nvim"
     use 'David-Kunz/markid'
+    use 'j-hui/fidget.nvim'
+    use 'xiyaowong/nvim-transparent'
     use {'mfussenegger/nvim-dap',
     requires = { 'rcarriga/nvim-dap-ui' },
     config = function ()
@@ -131,11 +133,6 @@ packer.startup {
       'nvim-lualine/lualine.nvim',
       requires = {
         { 'kyazdani42/nvim-web-devicons', opt = true },
-        { 'romgrk/barbar.nvim',
-          config = function()
-            require("core.plug.barbar")
-          end,
-        },
       },
       config = function()
         require('core.plug.lualine')

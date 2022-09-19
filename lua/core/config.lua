@@ -49,7 +49,7 @@ set complete+=kspell
 set completeopt=menuone,longest
 set exrc
 "set cursorline
-"set nu
+set nu
 set nohlsearch
 set mouse=a
 set hidden

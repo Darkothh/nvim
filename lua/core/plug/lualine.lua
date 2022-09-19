@@ -36,7 +36,6 @@ local bubbles_theme = {
     a = { fg = colors.black, bg = colors.red },
   },
 }
-local navic = require("nvim-navic")
 local ll = require('lualine')
 
 ll.setup {
@@ -81,17 +80,17 @@ ll.setup {
     lualine_x = {
     },
     lualine_y = {
-      {
-        'diagnostics',
-        sources = { 'nvim_diagnostic' },
-        symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
-        diagnostics_color = {
-          color_error = { fg = colors.red },
-          color_warn = { fg = colors.yellow },
-          color_info = { fg = colors.cyan },
-        },
-      },
-      { 'filetype' },
+      -- {
+      --   'diagnostics',
+      --   sources = { 'nvim_diagnostic' },
+      --   symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+      --   diagnostics_color = {
+      --     color_error = { fg = colors.red },
+      --     color_warn = { fg = colors.yellow },
+      --     color_info = { fg = colors.cyan },
+      --   },
+      -- },
+      -- { 'filetype' },
     },
     lualine_z = {
       {
@@ -107,6 +106,21 @@ ll.setup {
       { '%p%%',
         padding = { left = 0, right = 1 },
       },
+    },
+    inactive_sections = {
+    lualine_y = {
+      {
+        'diagnostics',
+        sources = { 'nvim_diagnostic' },
+        symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+        diagnostics_color = {
+          color_error = { fg = colors.red },
+          color_warn = { fg = colors.yellow },
+          color_info = { fg = colors.cyan },
+        },
+      },
+      { 'filetype' },
+    },
     },
   },
 }

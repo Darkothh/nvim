@@ -45,12 +45,13 @@ nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
 nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
 nmap('<leader>fh', '<cmd>Telescope help_tags<cr>')
 nmap('<leader>fk', '<cmd>Telescope keymaps<cr>')
+nmap('<A-1>', '<cmd>Telescope buffers<cr>')
 
 -- Nvim Tree
 nmap('<c-b>', ':NvimTreeToggle<cr>')
 nmap('<leader>ef', ':NvimTreeFindFile<cr>')
 
-nmap('<c-f>', ':Format<cr>')
+-- nmap('<c-f>', ':Format<cr>')
 
 -- Commentary
 map('', '<leader>/', ':Commentary<cr>')

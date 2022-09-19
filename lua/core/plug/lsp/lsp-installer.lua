@@ -48,6 +48,10 @@ lspconfig.html.setup {
   capabilities = opts.capabilities,
 }
 
+lspconfig.jsonls.setup {
+  opts = opts
+}
+
 lspconfig.cssls.setup {
   on_attach = opts.on_attach,
   capabilities = opts.capabilities,
@@ -60,6 +64,11 @@ lspconfig.vimls.setup {
 
 lspconfig.emmet_ls.setup {
   filetypes = { 'html' },
+}
+
+lspconfig.bashls.setup {
+  on_attach = opts.on_attach,
+  capabilities = opts.capabilities
 }
 
 lspconfig.stylelint_lsp.setup {
