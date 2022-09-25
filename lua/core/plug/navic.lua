@@ -32,7 +32,6 @@ navic.setup {
     Event = ' ',
     Operator = ' ',
     TypeParameter = ' '
-
   },
   highlight = true,
   separator = icons.sep.breadcrump_sep,
@@ -66,5 +65,3 @@ vim.api.nvim_set_hl(0, "NavicIconsStruct",        {default = true,  fg = "#D5294
 vim.api.nvim_set_hl(0, "NavicIconsEvent",         {default = true,  fg = "#FCD581"})
 vim.api.nvim_set_hl(0, "NavicIconsOperator",      {default = true,  fg = "#9DB4C0"})
 vim.api.nvim_set_hl(0, "NavicIconsTypeParameter", {default = true,  fg = "#F64740"})
--- vim.api.nvim_set_hl(0, "NavicText",               {default = true,  fg = "#ffffff"})
--- vim.api.nvim_set_hl(0, "NavicSeparator",          {default = true,  fg = "#c882ff"})

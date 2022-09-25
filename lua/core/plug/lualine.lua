@@ -50,14 +50,8 @@ ll.setup {
     lualine_a = {
       {
         'mode',
-        padding = { right = 1, left = 1 }
-      },
-      -- { navic.get_location, cond = navic.is_available },
-      { function()
-        return '﮼'
-      end,
         separator = { right = icons.sep.leftSep },
-        padding = 0,
+        padding = { right = 1, left = 1 }
       },
     },
     lualine_b = {

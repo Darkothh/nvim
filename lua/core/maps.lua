@@ -26,18 +26,14 @@ nmap('<leader>db', ':DapToggleBreakpoint<cr>')
 nmap('<leader>dt', '<Cmd>lua require"jdtls".test_class()<CR>')
 nmap('<leader>dn', '<Cmd>lua require"jdtls".test_nearest_method()<CR>')
 nmap('<leader>dc', ':DapContinue<cr>')
--- map("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>")
 -- LSP
 map('', '<leader>tl', '<cmd>lua require("lsp_lines").toggle()<cr>')
--- nmap(',t',  '<Plug>PlenaryTestFile')
--- nmap('<leader>t', '<Plug>PlenaryTestFile')
 nmap('<leader>a', ':Alpha<cr>')
 
-nmap('<leader>t', ':ServerRun<cr>')
-nmap('<leader>tt', ':ServerToggle<cr>')
+nmap('<leader>b', '<cmd>lua require"core.bfs".open()<cr>')
 
--- nmap(',r', '<cmd>luafile dev/init.lua<cr>')
--- nmap(',w', '<cmd>lua Reload_and_run()<cr>')
+-- nmap('<leader>t', ':ServerRun<cr>')
+-- nmap('<leader>tt', ':ServerToggle<cr>')
 
 -- Telescope
 nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
@@ -45,13 +41,12 @@ nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
 nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
 nmap('<leader>fh', '<cmd>Telescope help_tags<cr>')
 nmap('<leader>fk', '<cmd>Telescope keymaps<cr>')
-nmap('<A-1>', '<cmd>Telescope buffers<cr>')
 
 -- Nvim Tree
 nmap('<c-b>', ':NvimTreeToggle<cr>')
 nmap('<leader>ef', ':NvimTreeFindFile<cr>')
 
--- nmap('<c-f>', ':Format<cr>')
+nmap('<c-f>', ':Format<cr>')
 
 -- Commentary
 map('', '<leader>/', ':Commentary<cr>')

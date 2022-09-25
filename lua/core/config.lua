@@ -1,6 +1,6 @@
 -- local g = vim.g
 local o = vim.opt
-
+vim.notify = require("notify")
 o.linebreak = true
 o.breakindent = true
 o.showbreak = '↳ '
@@ -43,7 +43,7 @@ set shiftwidth=2
 set ai
 set si
 set expandtab
-set cmdheight=2
+set cmdheight=1
 set display+=lastline
 set complete+=kspell
 set completeopt=menuone,longest

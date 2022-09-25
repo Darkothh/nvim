@@ -12,20 +12,38 @@ packer.startup {
   function(use)
     use 'wbthomason/packer.nvim'
     use 'lewis6991/impatient.nvim'
+    use 'echasnovski/mini.nvim'
     use 'nvim-lua/plenary.nvim'
     use "karb94/neoscroll.nvim"
     use 'David-Kunz/markid'
+    use '~/Projects/nvim/core.nvim'
     use 'j-hui/fidget.nvim'
     use 'xiyaowong/nvim-transparent'
-    use {'mfussenegger/nvim-dap',
-    requires = { 'rcarriga/nvim-dap-ui' },
+    use 'mg979/vim-visual-multi'
+    use {'SmiteshP/nvim-navic',
     config = function ()
-      require("core.plug.dap")
+      require("core.plug.navic")
     end
   }
+    use { 'rmagatti/auto-session',
+      config = function()
+        require("core.plug.aSession")
+      end
+    }
+    use { 'folke/todo-comments.nvim',
+      config = function()
+        require("core.plug.todo")
+      end
+    }
+    use { 'mfussenegger/nvim-dap',
+      requires = { 'rcarriga/nvim-dap-ui' },
+      config = function()
+        require("core.plug.dap")
+      end
+    }
     use 'mfussenegger/nvim-jdtls'
     use { 'ziontee113/color-picker.nvim',
-      config = function ()
+      config = function()
         require("core.plug.colorPicker")
       end
     }
@@ -34,35 +52,17 @@ packer.startup {
         require("core.plug.alpha")
       end
     }
-    use { 'SmiteshP/nvim-gps',
-      config = function()
-        require "core.plug.gps"
-      end
-    }
-    use { 'SmiteshP/nvim-navic',
-      config = function()
-        require "core.plug.navic"
-      end
-    }
-    -- use { 'fgheng/winbar.nvim',
-    --   config = function()
-    --     require("core.plug.winbar")
-    --   end
-    -- }
     use { 'lukas-reineke/indent-blankline.nvim',
       config = function()
         require('core.plug.lines')
       end
     }
-    use {
-      'stevearc/aerial.nvim',
-      config = function()
-        require("core.plug.aerial")
-      end
-    }
-    -- use '~/Documents/Projects/prueba.nvim'
-    -- use 'dylanfierro/core.nvim'
-    -- use 'dylanfierro/live-server.nvim'
+    -- use {
+    --   'stevearc/aerial.nvim',
+    --   config = function()
+    --     require("core.plug.aerial")
+    --   end
+    -- }
     use { 'andweeb/presence.nvim',
       config = function()
         require('core.plug.presence')
@@ -173,7 +173,6 @@ packer.startup {
     use 'hrsh7th/cmp-nvim-lua'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'saadparwaiz1/cmp_luasnip'
-    -- use "rafamadriz/friendly-snippets"
     use 'L3MON4D3/LuaSnip'
     use 'jose-elias-alvarez/null-ls.nvim'
     -- lsp
@@ -182,7 +181,7 @@ packer.startup {
     -- }}}
   end,
   config = {
-    compile_path = vim.fn.stdpath('config') .. '/lua/core/packerC/packerComp.lua',
+    compile_path = vim.fn.stdpath('config') .. '/packerC/packerComp.lua',
     display = {
       open_fn = require('packer.util').float,
     },
