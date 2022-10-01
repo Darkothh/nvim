@@ -15,16 +15,31 @@ packer.startup {
     use 'echasnovski/mini.nvim'
     use 'nvim-lua/plenary.nvim'
     use "karb94/neoscroll.nvim"
-    use 'David-Kunz/markid'
-    use '~/Projects/nvim/core.nvim'
     use 'j-hui/fidget.nvim'
     use 'xiyaowong/nvim-transparent'
+    use 'lervag/wiki.vim'
     use 'mg979/vim-visual-multi'
-    use {'SmiteshP/nvim-navic',
+    use {'phaazon/hop.nvim',
     config = function ()
-      require("core.plug.navic")
+      require("core.plug.hop")
     end
-  }
+    }
+    use { "catppuccin/nvim", as = "catppuccin" }
+    -- use {'gelguy/wilder.nvim',
+    -- config = function ()
+    --  require("core.plug.wilder")
+    -- end
+  -- }
+    use { '~/Projects/nvim/core.nvim',
+      config = function()
+        require("core.plug.core")
+      end
+    }
+    use { 'SmiteshP/nvim-navic',
+      config = function()
+        require("core.plug.navic")
+      end
+    }
     use { 'rmagatti/auto-session',
       config = function()
         require("core.plug.aSession")
@@ -69,7 +84,11 @@ packer.startup {
       end
     }
     use 'tpope/vim-commentary'
-    use 'rcarriga/nvim-notify'
+    use {'rcarriga/nvim-notify',
+    config = function ()
+      require("core.plug.notify")
+    end
+  }
     use { 'akinsho/toggleterm.nvim',
       config = function()
         require("core.plug.terminal")
@@ -147,7 +166,9 @@ packer.startup {
     -- Highlight
     use {
       'nvim-treesitter/nvim-treesitter',
-      requires = { 'p00f/nvim-ts-rainbow' },
+      requires = { 'p00f/nvim-ts-rainbow',
+        use 'David-Kunz/markid'
+      },
       run = ':TSUpdate',
       config = function()
         require('core.plug.treesitter')
@@ -181,7 +202,7 @@ packer.startup {
     -- }}}
   end,
   config = {
-    compile_path = vim.fn.stdpath('config') .. '/packerC/packerComp.lua',
+    compile_path = vim.fn.stdpath('config') .. '/lua/core/packerC/packerComp.lua',
     display = {
       open_fn = require('packer.util').float,
     },

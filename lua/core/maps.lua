@@ -16,6 +16,12 @@ vim.g.mapleader = " "
 map('', '<leader>s', ':PackerSync<cr>')
 map('', '<leader>i', ':PackerInstall<cr>')
 map('', '<leader>C', ':PackerCompile<cr>')
+
+nmap('x', '"_x')
+nmap('-', '<C-x>')
+nmap('+', '<C-a>')
+nmap('<C-a>', 'gg<S-v>G')
+
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 nmap('<C-l>', '<c-w>l')
@@ -32,8 +38,8 @@ nmap('<leader>a', ':Alpha<cr>')
 
 nmap('<leader>b', '<cmd>lua require"core.bfs".open()<cr>')
 
--- nmap('<leader>t', ':ServerRun<cr>')
--- nmap('<leader>tt', ':ServerToggle<cr>')
+nmap('<leader>t', ':ServerRun<cr>')
+nmap('<leader>tt', ':ServerToggle<cr>')
 
 -- Telescope
 nmap('<leader>ff', '<cmd>Telescope find_files<cr>')

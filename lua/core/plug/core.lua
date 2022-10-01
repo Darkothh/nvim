@@ -1,1 +1,3 @@
-require('server').setup()
+require('server').setup({
+  no_browser = true
+})

@@ -1,4 +1,21 @@
+
+-- local bubbles_theme = {
+--   normal = {
+--     a = { fg = colors.white, bg = colors.blue },
+--   },
+
+--   insert = {
+--     a = { fg = colors.darkblue, bg = colors.violet },
+--   },
+--   visual = {
+--     a = { fg = colors.black, bg = colors.cyan },
+--   },
+--   replace = {
+--     a = { fg = colors.black, bg = colors.red },
+--   },
+-- }
 local icons = require "core.icons"
+
 local colors = {
   bg        = '#303030',
   fg        = '#bbc2cf',
@@ -21,27 +38,12 @@ local colors = {
   black     = '#080808',
 }
 
-local bubbles_theme = {
-  normal = {
-    a = { fg = colors.white, bg = colors.blue },
-  },
-
-  insert = {
-    a = { fg = colors.darkblue, bg = colors.violet },
-  },
-  visual = {
-    a = { fg = colors.black, bg = colors.cyan },
-  },
-  replace = {
-    a = { fg = colors.black, bg = colors.red },
-  },
-}
 local ll = require('lualine')
 
 ll.setup {
   options = {
     globalstatus = true,
-    theme = bubbles_theme,
+    theme = 'auto',
     disabled_filetypes = {},
     component_separators = '',
     section_separators = '',
