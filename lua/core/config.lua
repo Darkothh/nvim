@@ -16,7 +16,7 @@ o.fillchars = {
   verthoriz = '╋',
 }
 require("catppuccin").setup({
-	transparent_background = true,
+	transparent_background = false,
 	term_colors = true,
 	compile = {
 		enabled = false,
@@ -74,7 +74,7 @@ require('nvim-tundra').setup({
 })
 vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 vim.cmd([[
-colorscheme catppuccin 
+colorscheme everforest
 autocmd FileType * set fo-=c fo-=r fo-=o " Disable continuation of comments to the next line
 set tabstop=2
 set shiftwidth=2
@@ -111,7 +111,6 @@ set updatetime=100
 set encoding=UTF-8
 set nojoinspaces
 set showcmd
-set wildignore+=*/node_modules/**
 filetype plugin indent on
 filetype plugin on
 set ttyfast
@@ -138,3 +137,4 @@ syntax on
 vim.cmd 'command! Config edit $MYVIMRC'
 vim.cmd 'command! ConfigReload luafile $MYVIMRC'
 vim.cmd 'au BufNewFile,BufRead *.conf			setf dosini'
+-- vim.cmd 'au BufNewFile <cmd>lua require("lsp_lines").toggle()<cr>'

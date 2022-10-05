@@ -31,6 +31,7 @@ require("nvim-treesitter.configs").setup {
   ensure_installed = {
     "html",
     "css",
+    "query",
     "lua",
     "vim",
     "javascript",

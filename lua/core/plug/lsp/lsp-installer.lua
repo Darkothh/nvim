@@ -11,10 +11,11 @@ local servers = {
   'tsserver',
   'jdtls',
   'html',
+  'pyright',
+  'efm',
   'cssls',
   'jsonls',
   'vimls',
-  'emmet_ls',
   'bashls',
   'stylelint_lsp'
 }
@@ -31,3 +32,7 @@ for _, server in pairs(servers) do
   end
   lspconfig[server].setup(opts)
 end
+
+lspconfig.emmet_ls.setup{
+  filetypes = { 'html' },
+}

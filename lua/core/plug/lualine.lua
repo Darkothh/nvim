@@ -1,4 +1,3 @@
-
 -- local bubbles_theme = {
 --   normal = {
 --     a = { fg = colors.white, bg = colors.blue },
@@ -52,18 +51,20 @@ ll.setup {
     lualine_a = {
       {
         'mode',
-        separator = { right = icons.sep.leftSep },
+        separator = { right = icons.sep.leftBub },
         padding = { right = 1, left = 1 }
       },
     },
     lualine_b = {
       {
         'branch',
+        separator = { right = icons.sep.leftBub},
         icon = '',
         color = { fg = colors.violet, gui = 'bold' },
       },
       {
         'diff',
+        separator = { right = icons.sep.leftBub },
         symbols = { added = ' ', modified = ' ', removed = ' ' },
         diff_color = {
           added = { fg = colors.blue },
@@ -78,6 +79,7 @@ ll.setup {
     lualine_y = {
       {
         'diagnostics',
+        separator = { left = icons.sep.rightBub },
         sources = { 'nvim_diagnostic' },
         symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
         diagnostics_color = {
@@ -86,7 +88,9 @@ ll.setup {
           color_info = { fg = colors.cyan },
         },
       },
-      { 'filetype' },
+      { 'filetype',
+        separator = { left = icons.sep.rightBub }
+      },
     },
     lualine_z = {
       {

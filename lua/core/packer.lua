@@ -19,17 +19,29 @@ packer.startup {
     use 'xiyaowong/nvim-transparent'
     use 'lervag/wiki.vim'
     use 'mg979/vim-visual-multi'
-    use {'phaazon/hop.nvim',
-    config = function ()
-      require("core.plug.hop")
-    end
+    use 'nvim-treesitter/playground'
+    use {
+      'numToStr/Comment.nvim',
+      config = function()
+        require('core.plug.comment')
+      end
+    }
+    use { 'folke/which-key.nvim',
+      config = function()
+        require("core.plug.whichkey")
+      end
+    }
+    use { 'phaazon/hop.nvim',
+      config = function()
+        require("core.plug.hop")
+      end
     }
     use { "catppuccin/nvim", as = "catppuccin" }
     -- use {'gelguy/wilder.nvim',
     -- config = function ()
     --  require("core.plug.wilder")
     -- end
-  -- }
+    -- }
     use { '~/Projects/nvim/core.nvim',
       config = function()
         require("core.plug.core")
@@ -84,11 +96,11 @@ packer.startup {
       end
     }
     use 'tpope/vim-commentary'
-    use {'rcarriga/nvim-notify',
-    config = function ()
-      require("core.plug.notify")
-    end
-  }
+    use { 'rcarriga/nvim-notify',
+      config = function()
+        require("core.plug.notify")
+      end
+    }
     use { 'akinsho/toggleterm.nvim',
       config = function()
         require("core.plug.terminal")
