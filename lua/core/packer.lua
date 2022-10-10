@@ -20,6 +20,8 @@ packer.startup {
     use 'lervag/wiki.vim'
     use 'mg979/vim-visual-multi'
     use 'nvim-treesitter/playground'
+    use 'LunarVim/darkplus.nvim'
+    use 'navarasu/onedark.nvim'
     use {
       'numToStr/Comment.nvim',
       config = function()
@@ -187,13 +189,13 @@ packer.startup {
       end,
     }
     -- Autocomplete and lsp {{{
-    use({
-      "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-      as = "lsp_lines",
-      config = function()
-        require("lsp_lines").setup()
-      end,
-    })
+    -- use({
+    --   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    --   as = "lsp_lines",
+    --   config = function()
+    --     require("lsp_lines").setup()
+    --   end,
+    -- })
     use {
       'hrsh7th/nvim-cmp',
       config = function()

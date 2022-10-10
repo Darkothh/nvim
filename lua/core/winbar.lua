@@ -34,7 +34,7 @@ local function getFile()
   A = filename:gsub(path_separator, icons.sep.breadcrump_sep)
   -- print(A)
 end
-
+-- TODO: arreglar los iconos de no guardado y el fileicon 
 M.get_filename = function()
   getFile()
   local filename = A
@@ -47,6 +47,7 @@ M.get_filename = function()
     local hl_group = "FileIconColor" .. extension
     vim.api.nvim_set_hl(0, hl_group, { fg = file_icon_color })
     if f.isempty(file_icon) then
+
       file_icon = ""
       file_icon_color = ""
     end
@@ -77,6 +78,7 @@ local get_gps = function()
     return require("core.icons").sep.breadcrump_sep .. gps_location
   else
     return ""
+
   end
 end
 

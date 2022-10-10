@@ -17,6 +17,7 @@ local servers = {
   'jsonls',
   'vimls',
   'bashls',
+  'clangd',
   'stylelint_lsp'
 }
 local opts = {
