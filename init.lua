@@ -1,4 +1,5 @@
 pcall(require, "impatient")
+require("core.fopen")
 require("core.globals")
 require("core.bfs")
 require("core.plug.neoScroll")
