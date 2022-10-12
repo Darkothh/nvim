@@ -44,7 +44,7 @@ packer.startup {
     --  require("core.plug.wilder")
     -- end
     -- }
-    use { '~/Projects/nvim/core.nvim',
+    use { '~/Projects/core.nvim',
       config = function()
         require("core.plug.core")
       end
