@@ -12,7 +12,6 @@ local servers = {
   'jdtls',
   'html',
   'pyright',
-  'efm',
   'cssls',
   'jsonls',
   'vimls',
@@ -37,3 +36,5 @@ end
 lspconfig.emmet_ls.setup{
   filetypes = { 'html' },
 }
+
+lspconfig.efm.setup{}

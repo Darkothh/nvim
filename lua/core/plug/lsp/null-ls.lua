@@ -3,7 +3,7 @@ local formatting = null_ls.builtins.formatting
 
 local sources = {
   formatting.prettier.with {
-    extra_filetypes = { "toml", "solidity" },
+    extra_filetypes = { "sh" },
     extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
   },
   formatting.eslint,

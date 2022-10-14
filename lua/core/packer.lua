@@ -27,6 +27,8 @@ packer.startup {
     use 'nvim-treesitter/playground'
     use 'LunarVim/darkplus.nvim'
     use 'navarasu/onedark.nvim'
+    use 'bluz71/vim-moonfly-colors'
+    use 'ntk148v/komau.vim'
     use {
       'numToStr/Comment.nvim',
       config = function()

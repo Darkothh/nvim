@@ -1,4 +1,3 @@
--- local g = vim.g
 local o = vim.opt
 vim.notify = require("notify")
 o.linebreak = true
@@ -24,7 +23,7 @@ o.fillchars = {
   verthoriz = '╋',
 }
 vim.cmd([[
-colorscheme onedark
+colorscheme komau
 set display+=lastline
 set complete+=kspell
 set completeopt=menuone,longest
