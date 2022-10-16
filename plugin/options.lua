@@ -2,6 +2,7 @@ local o = vim.opt
 vim.notify = require("notify")
 o.linebreak = true
 o.breakindent = true
+o.lazyredraw = true
 o.showbreak = '↳ '
 o.clipboard = 'unnamedplus'
 o.background = 'dark'
@@ -22,6 +23,8 @@ o.fillchars = {
   vertright = '┣',
   verthoriz = '╋',
 }
+vim.opt.shadafile = "NONE"
+vim.opt.shadafile = ""
 vim.cmd([[
 colorscheme komau
 set display+=lastline
@@ -54,7 +57,6 @@ set showcmd
 filetype plugin indent on
 filetype plugin on
 set ttyfast
-set lazyredraw
 set laststatus=3
 let g:sneak#label = 1
 syntax on

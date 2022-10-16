@@ -1,4 +1,4 @@
-local packerPath = vim.fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
+local packerPath = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(packerPath)) == 1 then
   vim.fn.system("git clone --depth 1 https://github.com/wbthomason/packer.nvim " .. packerPath)
 end
@@ -29,6 +29,11 @@ packer.startup {
     use 'navarasu/onedark.nvim'
     use 'bluz71/vim-moonfly-colors'
     use 'ntk148v/komau.vim'
+    use { "Pocco81/true-zen.nvim",
+      config = function()
+        require("core.plugins.truezen")
+      end,
+    }
     use {
       'numToStr/Comment.nvim',
       config = function()
@@ -130,15 +135,6 @@ packer.startup {
     use 'rakr/vim-one'
     use 'sainnhe/everforest'
     use 'sam4llis/nvim-tundra'
-    use { 'anuvyklack/pretty-fold.nvim',
-      config = function()
-        require('core.plugins.fold')
-      end,
-      requires = {
-        'anuvyklack/fold-preview.nvim',
-        'anuvyklack/keymap-amend.nvim'
-      }
-    }
     use { 'norcalli/nvim-colorizer.lua',
       config = function()
         require('core.plugins.colorizer')
@@ -223,7 +219,7 @@ packer.startup {
     -- }}}
   end,
   config = {
-     --compile_path = vim.fn.stdpath('config') .. '/lua/core/packerC/packerComp.lua',
+    --compile_path = vim.fn.stdpath('config') .. '/lua/core/packerC/packerComp.lua',
     display = {
       open_fn = require('packer.util').float,
     },

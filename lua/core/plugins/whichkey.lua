@@ -249,6 +249,13 @@ local mappings = {
     p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
     r = { "<cmd>TSToggle rainbow<cr>", "Rainbow" },
   },
+  z = {
+    name = "Focus Mode",
+    a = { "<cmd>TZAtaraxis<cr>", "Center Current File" },
+    f = { "<cmd>TZFocus<cr>", "Focus Selected Window" },
+    m = { "<cmd>TZMinimalist<cr>", "Hide All Visual Clutter" },
+    n = { "<cmd>TZNarrow<cr>", "Focus Selected Lines" },
+  }
 }
 
 local vopts = {
@@ -261,6 +268,7 @@ local vopts = {
 }
 local vmappings = {
   ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', "Comment" },
+  ["n"] = { "<cmd>TZNarrow<cr>", "Focus Selected Lines" },
 }
 
 which_key.setup(setup)
