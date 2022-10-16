@@ -12,8 +12,8 @@ end
 
 vim.g.mapleader = " "
 
-
 nmap('x', '"_x')
+-- nmap('p', '"0p')
 nmap('-', '<C-x>')
 nmap('+', '<C-a>')
 nmap('<C-a>', 'gg<S-v>G')
@@ -26,17 +26,6 @@ nmap('<C-l>', '<c-w>l')
 nmap('<C-k>', '<c-w>k')
 nmap('<C-j>', '<c-w>j')
 nmap('<C-h>', '<c-w>h')
-
--- nmap('<leader>t', ':ServerRun<cr>')
--- nmap('<leader>tt', ':ServerToggle<cr>')
-
--- Telescope
--- nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
--- nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
--- nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
--- nmap('<leader>fh', '<cmd>Telescope help_tags<cr>')
--- nmap('<leader>fk', '<cmd>Telescope keymaps<cr>')
--- nmap('<leader>fc', '<cmd>Telescope colorscheme<cr>')
 
 -- Nvim Tree
 nmap('<c-b>', ':NvimTreeToggle<cr>')

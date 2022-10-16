@@ -46,6 +46,7 @@ set incsearch
 set termguicolors
 set scrolloff=2
 set noshowmode
+set timeoutlen=200
 set updatetime=100
 set encoding=UTF-8
 set nojoinspaces

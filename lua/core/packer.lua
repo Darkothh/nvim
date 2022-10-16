@@ -32,87 +32,87 @@ packer.startup {
     use {
       'numToStr/Comment.nvim',
       config = function()
-        require('core.plug.comment')
+        require('core.plugins.comment')
       end
     }
     use { 'folke/which-key.nvim',
       config = function()
-        require("core.plug.whichkey")
+        require("core.plugins.whichkey")
       end
     }
     use { 'phaazon/hop.nvim',
       config = function()
-        require("core.plug.hop")
+        require("core.plugins.hop")
       end
     }
     use { "catppuccin/nvim", as = "catppuccin" }
     -- use {'gelguy/wilder.nvim',
     -- config = function ()
-    --  require("core.plug.wilder")
+    --  require("core.plugins.wilder")
     -- end
     -- }
     use { '~/Projects/core.nvim',
       config = function()
-        require("core.plug.core")
+        require("core.plugins.core")
       end
     }
     use { 'SmiteshP/nvim-navic',
       config = function()
-        require("core.plug.navic")
+        require("core.plugins.navic")
       end
     }
     use { 'rmagatti/auto-session',
       config = function()
-        require("core.plug.aSession")
+        require("core.plugins.aSession")
       end
     }
     use { 'folke/todo-comments.nvim',
       config = function()
-        require("core.plug.todo")
+        require("core.plugins.todo")
       end
     }
     use { 'mfussenegger/nvim-dap',
       requires = { 'rcarriga/nvim-dap-ui' },
       config = function()
-        require("core.plug.dap")
+        require("core.plugins.dap")
       end
     }
     use 'mfussenegger/nvim-jdtls'
     use { 'ziontee113/color-picker.nvim',
       config = function()
-        require("core.plug.colorPicker")
+        require("core.plugins.colorPicker")
       end
     }
     use { 'goolord/alpha-nvim',
       config = function()
-        require("core.plug.alpha")
+        require("core.plugins.alpha")
       end
     }
     use { 'lukas-reineke/indent-blankline.nvim',
       config = function()
-        require('core.plug.lines')
+        require('core.plugins.lines')
       end
     }
     -- use {
     --   'stevearc/aerial.nvim',
     --   config = function()
-    --     require("core.plug.aerial")
+    --     require("core.plugins.aerial")
     --   end
     -- }
     use { 'andweeb/presence.nvim',
       config = function()
-        require('core.plug.presence')
+        require('core.plugins.presence')
       end
     }
     use 'tpope/vim-commentary'
     use { 'rcarriga/nvim-notify',
       config = function()
-        require("core.plug.notify")
+        require("core.plugins.notify")
       end
     }
     use { 'akinsho/toggleterm.nvim',
       config = function()
-        require("core.plug.terminal")
+        require("core.plugins.terminal")
       end
     }
     -- File Search
@@ -121,7 +121,7 @@ packer.startup {
         'nvim-lua/popup.nvim'
       },
       config = function()
-        require('core.plug.telescope')
+        require('core.plugins.telescope')
       end
     }
     -- Themes
@@ -132,7 +132,7 @@ packer.startup {
     use 'sam4llis/nvim-tundra'
     use { 'anuvyklack/pretty-fold.nvim',
       config = function()
-        require('core.plug.fold')
+        require('core.plugins.fold')
       end,
       requires = {
         'anuvyklack/fold-preview.nvim',
@@ -141,7 +141,7 @@ packer.startup {
     }
     use { 'norcalli/nvim-colorizer.lua',
       config = function()
-        require('core.plug.colorizer')
+        require('core.plugins.colorizer')
       end
     }
     -- Preview
@@ -159,13 +159,13 @@ packer.startup {
       },
       tag = 'nightly',
       config = function()
-        require('core.plug.nvim-tree')
+        require('core.plugins.nvim-tree')
       end,
     }
     -- GitHub
     use { 'lewis6991/gitsigns.nvim',
       config = function()
-        require('core.plug.gitsigns')
+        require('core.plugins.gitsigns')
       end
     }
     -- Status Line and Tabs
@@ -175,13 +175,13 @@ packer.startup {
         { 'kyazdani42/nvim-web-devicons', opt = true },
       },
       config = function()
-        require('core.plug.lualine')
+        require('core.plugins.lualine')
       end,
     }
     use {
       'windwp/nvim-autopairs',
       config = function()
-        require('core.plug.autopairs')
+        require('core.plugins.autopairs')
       end,
     }
     -- Highlight
@@ -192,7 +192,7 @@ packer.startup {
       },
       run = ':TSUpdate',
       config = function()
-        require('core.plug.treesitter')
+        require('core.plugins.treesitter')
       end,
     }
     -- Autocomplete and lsp {{{
@@ -206,7 +206,7 @@ packer.startup {
     use {
       'hrsh7th/nvim-cmp',
       config = function()
-        require("core.plug.cmp")
+        require("core.plugins.cmp")
       end,
     }
     use 'onsails/lspkind-nvim'
@@ -223,7 +223,7 @@ packer.startup {
     -- }}}
   end,
   config = {
-    compile_path = vim.fn.stdpath('config') .. '/lua/core/packerC/packerComp.lua',
+     --compile_path = vim.fn.stdpath('config') .. '/lua/core/packerC/packerComp.lua',
     display = {
       open_fn = require('packer.util').float,
     },
