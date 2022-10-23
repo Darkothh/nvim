@@ -29,7 +29,7 @@ dashboard.section.buttons.val = {
   button("e", icons.ui.NewFile .. "  New file", ":ene <BAR> startinsert <CR>"),
   button("r", icons.ui.History .. "  Recent files", ":Telescope oldfiles <CR>"),
   button("g", icons.ui.List .. "  Find text", ":Telescope live_grep <CR>"),
-  button("c", icons.ui.Gear .. "  Config", ":e ~/.config/nvim/lua/core/config.lua <CR>"),
+  button("c", icons.ui.Gear .. "  Config", ":e ~/.config/nvim/plugin/options.lua <CR>"),
   button("u", icons.ui.CloudDownload .. "  Update", ":PackerSync<CR>"),
   button("q", icons.ui.SignOut .. "  Quit", ":qa<CR>"),
 }

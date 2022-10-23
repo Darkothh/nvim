@@ -33,8 +33,18 @@ for _, server in pairs(servers) do
   lspconfig[server].setup(opts)
 end
 
-lspconfig.emmet_ls.setup{
+lspconfig.emmet_ls.setup {
   filetypes = { 'html' },
 }
 
-lspconfig.efm.setup{}
+lspconfig.efm.setup {
+  sh = {
+    { LintCommand = "shellcheck -f gcc -x",
+      LintFormats = {
+        "%f:%l:%c: %trror: %m",
+        "%f:%l:%c: %tarning: %m",
+        "%f:%l:%c: %tote: %m"
+      }
+    }
+  },
+}

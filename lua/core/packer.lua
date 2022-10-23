@@ -29,6 +29,7 @@ packer.startup {
     use 'navarasu/onedark.nvim'
     use 'bluz71/vim-moonfly-colors'
     use 'ntk148v/komau.vim'
+    use 'rafamadriz/friendly-snippets'
     use { "Pocco81/true-zen.nvim",
       config = function()
         require("core.plugins.truezen")
