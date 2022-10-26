@@ -16,6 +16,8 @@ local packer = require("packer")
 packer.startup {
   function(use)
     use 'wbthomason/packer.nvim'
+
+-- RANDOMS {{{
     use 'lewis6991/impatient.nvim'
     use 'echasnovski/mini.nvim'
     use 'nvim-lua/plenary.nvim'
@@ -35,6 +37,31 @@ packer.startup {
         require("core.plugins.truezen")
       end,
     }
+    use { 'andweeb/presence.nvim',
+      config = function()
+        require('core.plugins.presence')
+      end
+    }
+--}}}
+
+-- Utils {{{
+    use 'tpope/vim-commentary'
+    use {
+      'windwp/nvim-autopairs',
+      config = function()
+        require('core.plugins.autopairs')
+      end,
+    }
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      requires = { 'p00f/nvim-ts-rainbow',
+        use 'David-Kunz/markid'
+      },
+      run = ':TSUpdate',
+      config = function()
+        require('core.plugins.treesitter')
+      end,
+    }
     use {
       'numToStr/Comment.nvim',
       config = function()
@@ -51,39 +78,11 @@ packer.startup {
         require("core.plugins.hop")
       end
     }
-    use { "catppuccin/nvim", as = "catppuccin" }
-    -- use {'gelguy/wilder.nvim',
-    -- config = function ()
-    --  require("core.plugins.wilder")
-    -- end
-    -- }
-    use { '~/Projects/core.nvim',
-      config = function()
-        require("core.plugins.core")
-      end
-    }
-    use { 'SmiteshP/nvim-navic',
-      config = function()
-        require("core.plugins.navic")
-      end
-    }
     use { 'rmagatti/auto-session',
       config = function()
         require("core.plugins.aSession")
       end
     }
-    use { 'folke/todo-comments.nvim',
-      config = function()
-        require("core.plugins.todo")
-      end
-    }
-    use { 'mfussenegger/nvim-dap',
-      requires = { 'rcarriga/nvim-dap-ui' },
-      config = function()
-        require("core.plugins.dap")
-      end
-    }
-    use 'mfussenegger/nvim-jdtls'
     use { 'ziontee113/color-picker.nvim',
       config = function()
         require("core.plugins.colorPicker")
@@ -92,28 +91,6 @@ packer.startup {
     use { 'goolord/alpha-nvim',
       config = function()
         require("core.plugins.alpha")
-      end
-    }
-    use { 'lukas-reineke/indent-blankline.nvim',
-      config = function()
-        require('core.plugins.lines')
-      end
-    }
-    -- use {
-    --   'stevearc/aerial.nvim',
-    --   config = function()
-    --     require("core.plugins.aerial")
-    --   end
-    -- }
-    use { 'andweeb/presence.nvim',
-      config = function()
-        require('core.plugins.presence')
-      end
-    }
-    use 'tpope/vim-commentary'
-    use { 'rcarriga/nvim-notify',
-      config = function()
-        require("core.plugins.notify")
       end
     }
     use { 'akinsho/toggleterm.nvim',
@@ -130,25 +107,37 @@ packer.startup {
         require('core.plugins.telescope')
       end
     }
-    -- Themes
-    use 'projekt0n/github-nvim-theme'
-    use { 'Everblush/everblush.nvim', as = 'everblush' }
-    use 'rakr/vim-one'
-    use 'sainnhe/everforest'
-    use 'sam4llis/nvim-tundra'
-    use { 'norcalli/nvim-colorizer.lua',
+--}}}
+
+-- En proceso {{{
+    use { '~/Projects/core.nvim',
       config = function()
-        require('core.plugins.colorizer')
+        require("core.plugins.core")
       end
     }
-    -- Preview
-    use({ "iamcco/markdown-preview.nvim",
-      run = "cd app && npm install",
-      setup = function()
-        vim.g.mkdp_filetypes = { "markdown" }
-      end,
-      ft = { "markdown" },
-    })
+--}}}
+
+-- Ui {{{
+    use { 'SmiteshP/nvim-navic',
+      config = function()
+        require("core.plugins.navic")
+      end
+    }
+    use { 'folke/todo-comments.nvim',
+      config = function()
+        require("core.plugins.todo")
+      end
+    }
+    use { 'lukas-reineke/indent-blankline.nvim',
+      config = function()
+        require('core.plugins.lines')
+      end
+    }
+    use { 'rcarriga/nvim-notify',
+      config = function()
+        require("core.plugins.notify")
+      end
+    }
     use {
       'kyazdani42/nvim-tree.lua',
       requires = {
@@ -159,13 +148,6 @@ packer.startup {
         require('core.plugins.nvim-tree')
       end,
     }
-    -- GitHub
-    use { 'lewis6991/gitsigns.nvim',
-      config = function()
-        require('core.plugins.gitsigns')
-      end
-    }
-    -- Status Line and Tabs
     use {
       'nvim-lualine/lualine.nvim',
       requires = {
@@ -175,31 +157,48 @@ packer.startup {
         require('core.plugins.lualine')
       end,
     }
-    use {
-      'windwp/nvim-autopairs',
-      config = function()
-        require('core.plugins.autopairs')
+    use({ "iamcco/markdown-preview.nvim",
+      run = "cd app && npm install",
+      setup = function()
+        vim.g.mkdp_filetypes = { "markdown" }
       end,
-    }
-    -- Highlight
-    use {
-      'nvim-treesitter/nvim-treesitter',
-      requires = { 'p00f/nvim-ts-rainbow',
-        use 'David-Kunz/markid'
-      },
-      run = ':TSUpdate',
+      ft = { "markdown" },
+    })
+--}}}
+
+-- Debug {{{
+    use { 'mfussenegger/nvim-dap',
+      requires = { 'rcarriga/nvim-dap-ui' },
       config = function()
-        require('core.plugins.treesitter')
-      end,
+        require("core.plugins.dap")
+      end
     }
-    -- Autocomplete and lsp {{{
-    -- use({
-    --   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    --   as = "lsp_lines",
-    --   config = function()
-    --     require("lsp_lines").setup()
-    --   end,
-    -- })
+    use 'mfussenegger/nvim-jdtls'
+--}}}
+
+-- Themes {{{
+    use { "catppuccin/nvim", as = "catppuccin" }
+    use 'projekt0n/github-nvim-theme'
+    use { 'Everblush/everblush.nvim', as = 'everblush' }
+    use 'rakr/vim-one'
+    use 'sainnhe/everforest'
+    use 'sam4llis/nvim-tundra'
+    use { 'norcalli/nvim-colorizer.lua',
+      config = function()
+        require('core.plugins.colorizer')
+      end
+    }
+--}}}
+
+-- GitHub {{{
+    use { 'lewis6991/gitsigns.nvim',
+      config = function()
+        require('core.plugins.gitsigns')
+      end
+    }
+--}}}
+
+-- Autocomplete and lsp {{{
     use {
       'hrsh7th/nvim-cmp',
       config = function()
@@ -218,6 +217,7 @@ packer.startup {
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
     -- }}}
+
   end,
   config = {
     --compile_path = vim.fn.stdpath('config') .. '/lua/core/packerC/packerComp.lua',

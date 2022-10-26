@@ -27,6 +27,7 @@ vim.opt.shadafile = "NONE"
 vim.opt.shadafile = ""
 vim.cmd([[
 colorscheme komau
+set foldmethod=marker foldlevel=0
 set display+=lastline
 set complete+=kspell
 set completeopt=menuone,longest
