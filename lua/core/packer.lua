@@ -44,77 +44,21 @@ packer.startup {
     }
 --}}}
 
--- Utils {{{
-    use 'tpope/vim-commentary'
-    use {
-      'windwp/nvim-autopairs',
-      config = function()
-        require('core.plugins.autopairs')
-      end,
-    }
-    use {
-      'nvim-treesitter/nvim-treesitter',
-      requires = { 'p00f/nvim-ts-rainbow',
-        use 'David-Kunz/markid'
-      },
-      run = ':TSUpdate',
-      config = function()
-        require('core.plugins.treesitter')
-      end,
-    }
-    use {
-      'numToStr/Comment.nvim',
-      config = function()
-        require('core.plugins.comment')
-      end
-    }
-    use { 'folke/which-key.nvim',
-      config = function()
-        require("core.plugins.whichkey")
-      end
-    }
-    use { 'phaazon/hop.nvim',
-      config = function()
-        require("core.plugins.hop")
-      end
-    }
-    use { 'rmagatti/auto-session',
-      config = function()
-        require("core.plugins.aSession")
-      end
-    }
-    use { 'ziontee113/color-picker.nvim',
-      config = function()
-        require("core.plugins.colorPicker")
-      end
-    }
-    use { 'goolord/alpha-nvim',
-      config = function()
-        require("core.plugins.alpha")
-      end
-    }
-    use { 'akinsho/toggleterm.nvim',
-      config = function()
-        require("core.plugins.terminal")
-      end
-    }
-    -- File Search
-    use { 'nvim-telescope/telescope.nvim',
-      requires = {
-        'nvim-lua/popup.nvim'
-      },
-      config = function()
-        require('core.plugins.telescope')
-      end
-    }
---}}}
-
--- En proceso {{{
-    use { '~/Projects/core.nvim',
-      config = function()
-        require("core.plugins.core")
-      end
-    }
+-- Themes {{{
+    use { "catppuccin/nvim", as = "catppuccin" }
+    use 'projekt0n/github-nvim-theme'
+    use { 'Everblush/everblush.nvim', as = 'everblush' }
+    use 'w3barsi/barstrata.nvim'
+    use 'EdenEast/nightfox.nvim'
+    use 'ray-x/aurora'
+    use 'Domeee/mosel.nvim'
+    use 'rose-pine/neovim'
+    use 'embark-theme/vim'
+    use 'rebelot/kanagawa.nvim'
+    use 'rakr/vim-one'
+    use 'sainnhe/everforest'
+    use 'sam4llis/nvim-tundra'
+    use 'wuelnerdotexe/vim-enfocado'
 --}}}
 
 -- Ui {{{
@@ -166,6 +110,76 @@ packer.startup {
     })
 --}}}
 
+-- Utils {{{
+    use 'tpope/vim-commentary'
+    use {
+      'windwp/nvim-autopairs',
+      config = function()
+        require('core.plugins.autopairs')
+      end,
+    }
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      requires = { 'p00f/nvim-ts-rainbow',
+        use 'David-Kunz/markid'
+      },
+      run = ':TSUpdate',
+      config = function()
+        require('core.plugins.treesitter')
+      end,
+    }
+    use { 'norcalli/nvim-colorizer.lua',
+      config = function()
+        require('core.plugins.colorizer')
+      end
+    }
+    use {
+      'numToStr/Comment.nvim',
+      config = function()
+        require('core.plugins.comment')
+      end
+    }
+    use { 'folke/which-key.nvim',
+      config = function()
+        require("core.plugins.whichkey")
+      end
+    }
+    use { 'phaazon/hop.nvim',
+      config = function()
+        require("core.plugins.hop")
+      end
+    }
+    use { 'rmagatti/auto-session',
+      config = function()
+        require("core.plugins.aSession")
+      end
+    }
+    use { 'ziontee113/color-picker.nvim',
+      config = function()
+        require("core.plugins.colorPicker")
+      end
+    }
+    use { 'goolord/alpha-nvim',
+      config = function()
+        require("core.plugins.alpha")
+      end
+    }
+    use { 'akinsho/toggleterm.nvim',
+      config = function()
+        require("core.plugins.terminal")
+      end
+    }
+    -- File Search
+    use { 'nvim-telescope/telescope.nvim',
+      requires = {
+        'nvim-lua/popup.nvim'
+      },
+      config = function()
+        require('core.plugins.telescope')
+      end
+    }
+--}}}
+
 -- Debug {{{
     use { 'mfussenegger/nvim-dap',
       requires = { 'rcarriga/nvim-dap-ui' },
@@ -176,26 +190,12 @@ packer.startup {
     use 'mfussenegger/nvim-jdtls'
 --}}}
 
--- Themes {{{
-    use { "catppuccin/nvim", as = "catppuccin" }
-    use 'projekt0n/github-nvim-theme'
-    use { 'Everblush/everblush.nvim', as = 'everblush' }
-    use 'rakr/vim-one'
-    use 'sainnhe/everforest'
-    use 'sam4llis/nvim-tundra'
-    use { 'norcalli/nvim-colorizer.lua',
-      config = function()
-        require('core.plugins.colorizer')
-      end
-    }
---}}}
-
 -- GitHub {{{
-    use { 'lewis6991/gitsigns.nvim',
-      config = function()
-        require('core.plugins.gitsigns')
-      end
-    }
+    -- use { 'lewis6991/gitsigns.nvim',
+    --   config = function()
+    --     require('core.plugins.gitsigns')
+    --   end
+    -- }
 --}}}
 
 -- Autocomplete and lsp {{{
@@ -217,6 +217,14 @@ packer.startup {
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
     -- }}}
+
+-- En proceso {{{
+    use { '~/Projects/core.nvim',
+      config = function()
+        require("core.plugins.core")
+      end
+    }
+--}}}
 
   end,
   config = {

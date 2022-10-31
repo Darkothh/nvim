@@ -26,8 +26,21 @@ o.fillchars = {
 vim.opt.shadafile = "NONE"
 vim.opt.shadafile = ""
 vim.cmd([[
-colorscheme komau
-set foldmethod=marker foldlevel=0
+colorscheme github_dark_default
+" set foldmethod=marker foldlevel=99
+setlocal foldmethod=indent
+" set nofoldenable
+set foldlevel=0
+set fillchars=fold:\ "The backslash escapes a space
+set foldtext=CustomFoldText()
+function! CustomFoldText()
+  let indentation = indent(v:foldstart - 1)
+  let foldSize = 1 + v:foldend - v:foldstart
+  let foldSizeStr = " " . foldSize . " lines "
+  let foldLevelStr = repeat("+--", v:foldlevel)
+  let expansionString = repeat(" ", indentation)
+  return expansionString . foldLevelStr . foldSizeStr
+endfunction
 set display+=lastline
 set complete+=kspell
 set completeopt=menuone,longest
@@ -63,7 +76,7 @@ let g:sneak#label = 1
 syntax on
 ]])
 require("transparent").setup({
-  enable = true,
+  enable = false,
   extra_groups = { -- table/string: additional groups that should be cleared
     "hl-Title",
     "hl-LineNr",
