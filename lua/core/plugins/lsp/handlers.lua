@@ -83,15 +83,11 @@ end
 local navic = require("nvim-navic")
 
 M.on_attach = function(client, bufnr)
-  require("aerial").on_attach(client, bufnr)
   navic.attach(client, bufnr)
-
   if client.name == "jdt.ls" then
     require("jdtls").setup_dap { hotcodereplace = "auto" }
     require("jdtls.dap").setup_dap_main_class_configs()
-    -- vim.lsp.codelens.refresh()
   end
-
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end
@@ -103,6 +99,5 @@ if not status_ok then
   return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
--- M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 return M

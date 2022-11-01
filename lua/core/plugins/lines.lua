@@ -1,6 +1,6 @@
 require("indent_blankline").setup {
   buftype_exclude = {"terminal"},
-  filetype_exclude = {"alpha", "NvimTree", "packer", "lsp-installer"},
+  filetype_exclude = {"alpha", "NvimTree", "packer", "lsp-installer", "javascript", "lua"},
   show_current_context = true,
   context_patterns = {
     "class", "return", "function", "method", "^if", "^while", "jsx_element", "^for", "^object",

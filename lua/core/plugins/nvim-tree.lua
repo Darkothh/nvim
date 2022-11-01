@@ -44,8 +44,8 @@ ntree.setup {
   },
   view = {
     width = 30,
-    height = 30,
-    hide_root_folder = true,
+    -- height = 30,
+    hide_root_folder = false,
     side = 'left',
     preserve_window_proportions = false,
     mappings = {
@@ -58,7 +58,7 @@ ntree.setup {
     signcolumn = "yes"
   },
   trash = {
-    cmd = "trash",
+    cmd = "trash-put",
     require_confirm = true
   },
   actions = {
@@ -81,21 +81,3 @@ ntree.setup {
   }
 }
 
-local nvim_tree_events = require('nvim-tree.events')
-local bufferline_state = require('bufferline.state')
-
-local function get_tree_size()
-  return require'nvim-tree.view'.View.width
-end
-
-nvim_tree_events.subscribe('TreeOpen', function()
-  bufferline_state.set_offset(get_tree_size())
-end)
-
-nvim_tree_events.subscribe('Resize', function()
-  bufferline_state.set_offset(get_tree_size())
-end)
-
-nvim_tree_events.subscribe('TreeClose', function()
-  bufferline_state.set_offset(0)
-end)

@@ -90,7 +90,7 @@ return {
   },
   sep = {
     rightBub = '',
-    leftSep = '',
+    leftBub = '',
     rightTr = '',
     leftTr = '',
     breadcrump_sep = " ⟩ ",

@@ -1,4 +1,20 @@
+-- local bubbles_theme = {
+--   normal = {
+--     a = { fg = colors.white, bg = colors.blue },
+--   },
+
+--   insert = {
+--     a = { fg = colors.darkblue, bg = colors.violet },
+--   },
+--   visual = {
+--     a = { fg = colors.black, bg = colors.cyan },
+--   },
+--   replace = {
+--     a = { fg = colors.black, bg = colors.red },
+--   },
+-- }
 local icons = require "core.icons"
+
 local colors = {
   bg        = '#303030',
   fg        = '#bbc2cf',
@@ -21,28 +37,12 @@ local colors = {
   black     = '#080808',
 }
 
-local bubbles_theme = {
-  normal = {
-    a = { fg = colors.white, bg = colors.blue },
-  },
-
-  insert = {
-    a = { fg = colors.darkblue, bg = colors.violet },
-  },
-  visual = {
-    a = { fg = colors.black, bg = colors.cyan },
-  },
-  replace = {
-    a = { fg = colors.black, bg = colors.red },
-  },
-}
-local navic = require("nvim-navic")
 local ll = require('lualine')
 
 ll.setup {
   options = {
     globalstatus = true,
-    theme = bubbles_theme,
+    theme = 'auto',
     disabled_filetypes = {},
     component_separators = '',
     section_separators = '',
@@ -51,24 +51,20 @@ ll.setup {
     lualine_a = {
       {
         'mode',
+        separator = { right = icons.sep.leftBub },
         padding = { right = 1, left = 1 }
-      },
-      -- { navic.get_location, cond = navic.is_available },
-      { function()
-        return '﮼'
-      end,
-        separator = { right = icons.sep.leftSep },
-        padding = 0,
       },
     },
     lualine_b = {
       {
         'branch',
+        separator = { right = icons.sep.leftBub},
         icon = '',
         color = { fg = colors.violet, gui = 'bold' },
       },
       {
         'diff',
+        separator = { right = icons.sep.leftBub },
         symbols = { added = ' ', modified = ' ', removed = ' ' },
         diff_color = {
           added = { fg = colors.blue },
@@ -83,6 +79,7 @@ ll.setup {
     lualine_y = {
       {
         'diagnostics',
+        separator = { left = icons.sep.rightBub },
         sources = { 'nvim_diagnostic' },
         symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
         diagnostics_color = {
@@ -91,7 +88,9 @@ ll.setup {
           color_info = { fg = colors.cyan },
         },
       },
-      { 'filetype' },
+      { 'filetype',
+        separator = { left = icons.sep.rightBub }
+      },
     },
     lualine_z = {
       {

@@ -25,7 +25,6 @@ M.winbar_filetype_exclude = {
   "dapui_console",
   "lab",
   "Markdown",
-  "",
 }
 
 local icons = require "core.icons"
@@ -35,7 +34,7 @@ local function getFile()
   A = filename:gsub(path_separator, icons.sep.breadcrump_sep)
   -- print(A)
 end
-
+-- TODO: arreglar los iconos de no guardado y el fileicon 
 M.get_filename = function()
   getFile()
   local filename = A
@@ -48,6 +47,7 @@ M.get_filename = function()
     local hl_group = "FileIconColor" .. extension
     vim.api.nvim_set_hl(0, hl_group, { fg = file_icon_color })
     if f.isempty(file_icon) then
+
       file_icon = ""
       file_icon_color = ""
     end
@@ -75,9 +75,10 @@ local get_gps = function()
   end
 
   if not require("core.functions").isempty(gps_location) then
-    return require("core.icons").sep.breadcrump_sep .. " " .. gps_location
+    return require("core.icons").sep.breadcrump_sep .. gps_location
   else
     return ""
+
   end
 end
 
@@ -99,7 +100,7 @@ M.get_winbar = function()
   local gps_added = false
   if not f.isempty(value) then
     local gps_value = get_gps()
-    value = value .. " " .. gps_value
+    value = value  .. gps_value
     if not f.isempty(gps_value) then
       gps_added = true
     end

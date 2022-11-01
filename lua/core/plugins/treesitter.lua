@@ -2,11 +2,11 @@ if not pcall(require, "nvim-treesitter") then
   return
 end
 
-local custom_captures = {
-  ["function.call"] = "LuaFunctionCall",
-  ["function.bracket"] = "Type",
-  ["namespace.type"] = "TSNamespaceType",
-}
+-- local custom_captures = {
+--   ["function.call"] = "LuaFunctionCall",
+--   ["function.bracket"] = "Type",
+--   ["namespace.type"] = "TSNamespaceType",
+-- }
 
 local swap_next, swap_prev = (function()
   local swap_objects = {
@@ -25,25 +25,27 @@ local swap_next, swap_prev = (function()
   return n, p
 end)()
 
-require("nvim-treesitter.highlight").set_custom_captures(custom_captures)
+-- require("nvim-treesitter.highlight").set_custom_captures(custom_captures)
 
 require("nvim-treesitter.configs").setup {
   ensure_installed = {
     "html",
     "css",
+    "query",
     "lua",
     "vim",
     "javascript",
     "json",
     "markdown",
     "python",
+    "bash",
     "typescript",
   },
   highlight = {
     enable = true,
     use_languagetree = true,
     disable = { "html", "css" },
-    custom_captures = custom_captures,
+    -- custom_captures = custom_captures,
   },
   markid = { enable = true },
   rainbow = {
