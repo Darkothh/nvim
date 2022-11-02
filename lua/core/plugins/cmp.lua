@@ -160,3 +160,5 @@ cmp.setup {
     ghost_text = true,
   },
 }
+require "cmp".setup.filetype({ "conf", "dosini", "config" },
+    { sources = { { name = "fonts"} } })

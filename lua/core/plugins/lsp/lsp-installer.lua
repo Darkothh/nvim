@@ -11,12 +11,13 @@ local servers = {
   'tsserver',
   'jdtls',
   'html',
+  -- 'zk',
   'pyright',
   'cssls',
   'jsonls',
   'vimls',
-  'bashls',
   'clangd',
+  'bashls',
   'stylelint_lsp'
 }
 local opts = {

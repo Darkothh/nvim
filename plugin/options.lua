@@ -1,3 +1,6 @@
+vim.cmd 'au FileType * set fo-=c fo-=r fo-=o' -- Disable continuation of comments to the next line
+vim.cmd 'au BufNewFile,BufRead *.conf			setf dosini' -- Set filetype dosini to .conf file to treesitter highlight
+
 local o = vim.opt
 vim.notify = require("notify")
 o.linebreak = true
@@ -76,7 +79,7 @@ let g:sneak#label = 1
 syntax on
 ]])
 require("transparent").setup({
-  enable = false,
+  enable = true,
   extra_groups = { -- table/string: additional groups that should be cleared
     "hl-Title",
     "hl-LineNr",

@@ -18,10 +18,15 @@ packer.startup {
     use 'wbthomason/packer.nvim'
 
 -- RANDOMS {{{
+    use {'mickael-menu/zk-nvim',
+      config = function ()
+        require("zk").setup()
+      end
+    }
     use 'lewis6991/impatient.nvim'
     use 'echasnovski/mini.nvim'
     use 'nvim-lua/plenary.nvim'
-    use "karb94/neoscroll.nvim"
+    use 'karb94/neoscroll.nvim'
     use 'j-hui/fidget.nvim'
     use 'xiyaowong/nvim-transparent'
     use 'lervag/wiki.vim'
@@ -111,6 +116,7 @@ packer.startup {
 --}}}
 
 -- Utils {{{
+    use 'christoomey/vim-tmux-navigator'
     use 'tpope/vim-commentary'
     use {
       'windwp/nvim-autopairs',
@@ -144,11 +150,11 @@ packer.startup {
         require("core.plugins.whichkey")
       end
     }
-    use { 'phaazon/hop.nvim',
-      config = function()
-        require("core.plugins.hop")
-      end
-    }
+    -- use { 'phaazon/hop.nvim',
+    --   config = function()
+    --     require("core.plugins.hop")
+    --   end
+    -- }
     use { 'rmagatti/auto-session',
       config = function()
         require("core.plugins.aSession")
@@ -205,6 +211,7 @@ packer.startup {
         require("core.plugins.cmp")
       end,
     }
+    use "amarakon/nvim-cmp-fonts"
     use 'onsails/lspkind-nvim'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
