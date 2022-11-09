@@ -13,7 +13,7 @@
 --     a = { fg = colors.black, bg = colors.red },
 --   },
 -- }
-local icons = require "core.icons"
+local icons = require "magnus.icons"
 
 local colors = {
   bg        = '#303030',
