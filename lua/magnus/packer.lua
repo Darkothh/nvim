@@ -117,6 +117,7 @@ packer.startup {
 
 -- Utils {{{
     use 'christoomey/vim-tmux-navigator'
+    use 'nvim-telescope/telescope-media-files.nvim'
     use 'tpope/vim-commentary'
     use {
       'windwp/nvim-autopairs',
