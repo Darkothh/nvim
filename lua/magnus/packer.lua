@@ -39,12 +39,12 @@ packer.startup {
     use 'rafamadriz/friendly-snippets'
     use { "Pocco81/true-zen.nvim",
       config = function()
-        require("core.plugins.truezen")
+        require("magnus.plugins.truezen")
       end,
     }
     use { 'andweeb/presence.nvim',
       config = function()
-        require('core.plugins.presence')
+        require('magnus.plugins.presence')
       end
     }
 --}}}
@@ -69,22 +69,22 @@ packer.startup {
 -- Ui {{{
     use { 'SmiteshP/nvim-navic',
       config = function()
-        require("core.plugins.navic")
+        require("magnus.plugins.navic")
       end
     }
     use { 'folke/todo-comments.nvim',
       config = function()
-        require("core.plugins.todo")
+        require("magnus.plugins.todo")
       end
     }
     use { 'lukas-reineke/indent-blankline.nvim',
       config = function()
-        require('core.plugins.lines')
+        require('magnus.plugins.lines')
       end
     }
     use { 'rcarriga/nvim-notify',
       config = function()
-        require("core.plugins.notify")
+        require("magnus.plugins.notify")
       end
     }
     use {
@@ -94,7 +94,7 @@ packer.startup {
       },
       tag = 'nightly',
       config = function()
-        require('core.plugins.nvim-tree')
+        require('magnus.plugins.nvim-tree')
       end,
     }
     use {
@@ -103,7 +103,7 @@ packer.startup {
         { 'kyazdani42/nvim-web-devicons', opt = true },
       },
       config = function()
-        require('core.plugins.lualine')
+        require('magnus.plugins.lualine')
       end,
     }
     use({ "iamcco/markdown-preview.nvim",
@@ -121,7 +121,7 @@ packer.startup {
     use {
       'windwp/nvim-autopairs',
       config = function()
-        require('core.plugins.autopairs')
+        require('magnus.plugins.autopairs')
       end,
     }
     use {
@@ -131,48 +131,48 @@ packer.startup {
       },
       run = ':TSUpdate',
       config = function()
-        require('core.plugins.treesitter')
+        require('magnus.plugins.treesitter')
       end,
     }
     use { 'norcalli/nvim-colorizer.lua',
       config = function()
-        require('core.plugins.colorizer')
+        require('magnus.plugins.colorizer')
       end
     }
     use {
       'numToStr/Comment.nvim',
       config = function()
-        require('core.plugins.comment')
+        require('magnus.plugins.comment')
       end
     }
     use { 'folke/which-key.nvim',
       config = function()
-        require("core.plugins.whichkey")
+        require("magnus.plugins.whichkey")
       end
     }
     -- use { 'phaazon/hop.nvim',
     --   config = function()
-    --     require("core.plugins.hop")
+    --     require("magnus.plugins.hop")
     --   end
     -- }
     use { 'rmagatti/auto-session',
       config = function()
-        require("core.plugins.aSession")
+        require("magnus.plugins.aSession")
       end
     }
     use { 'ziontee113/color-picker.nvim',
       config = function()
-        require("core.plugins.colorPicker")
+        require("magnus.plugins.colorPicker")
       end
     }
     use { 'goolord/alpha-nvim',
       config = function()
-        require("core.plugins.alpha")
+        require("magnus.plugins.alpha")
       end
     }
     use { 'akinsho/toggleterm.nvim',
       config = function()
-        require("core.plugins.terminal")
+        require("magnus.plugins.terminal")
       end
     }
     -- File Search
@@ -181,7 +181,7 @@ packer.startup {
         'nvim-lua/popup.nvim'
       },
       config = function()
-        require('core.plugins.telescope')
+        require('magnus.plugins.telescope')
       end
     }
 --}}}
@@ -190,7 +190,7 @@ packer.startup {
     use { 'mfussenegger/nvim-dap',
       requires = { 'rcarriga/nvim-dap-ui' },
       config = function()
-        require("core.plugins.dap")
+        require("magnus.plugins.dap")
       end
     }
     use 'mfussenegger/nvim-jdtls'
@@ -199,7 +199,7 @@ packer.startup {
 -- GitHub {{{
     -- use { 'lewis6991/gitsigns.nvim',
     --   config = function()
-    --     require('core.plugins.gitsigns')
+    --     require('magnus.plugins.gitsigns')
     --   end
     -- }
 --}}}
@@ -208,7 +208,7 @@ packer.startup {
     use {
       'hrsh7th/nvim-cmp',
       config = function()
-        require("core.plugins.cmp")
+        require("magnus.plugins.cmp")
       end,
     }
     use "amarakon/nvim-cmp-fonts"
@@ -226,16 +226,16 @@ packer.startup {
     -- }}}
 
 -- En proceso {{{
-    use { '~/Projects/core.nvim',
+    use { 'TroubleC0re/core.nvim',
       config = function()
-        require("core.plugins.core")
+        require("magnus.plugins.core")
       end
     }
 --}}}
 
   end,
   config = {
-    --compile_path = vim.fn.stdpath('config') .. '/lua/core/packerC/packerComp.lua',
+    --compile_path = vim.fn.stdpath('config') .. '/lua/magnus.packerC/packerComp.lua',
     display = {
       open_fn = require('packer.util').float,
     },

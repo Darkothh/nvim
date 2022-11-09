@@ -10,7 +10,7 @@ local function button(sc, txt, keybind, keybind_opts)
   return b
 end
 
-local icons = require "core.icons"
+local icons = require "magnus.icons"
 
 dashboard.section.header.val = {
   "    ⠀⠀⠀⠀⠀ ⠀⠀ ＿＿＿  ",

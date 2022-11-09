@@ -6,7 +6,7 @@ end
 
 local actions = require "telescope.actions"
 -- telescope.load_extension "media_files"
-local icons = require "core.icons"
+local icons = require "magnus.icons"
 
 telescope.setup {
   defaults = {

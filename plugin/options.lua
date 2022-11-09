@@ -1,5 +1,5 @@
 local o = vim.opt
-vim.notify = require("notify")
+-- vim.notify = require("notify")
 o.linebreak = true
 o.breakindent = true
 o.lazyredraw = true
