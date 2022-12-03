@@ -76,7 +76,7 @@ let g:sneak#label = 1
 syntax on
 ]])
 require("transparent").setup({
-  enable = false,
+  enable = true,
   extra_groups = { -- table/string: additional groups that should be cleared
     "hl-Title",
     "hl-LineNr",

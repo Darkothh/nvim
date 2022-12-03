@@ -11,21 +11,22 @@ local servers = {
   'tsserver',
   'jdtls',
   'html',
+  -- 'zk',
   'pyright',
   'cssls',
   'jsonls',
   'vimls',
-  'bashls',
   'clangd',
+  'bashls',
   'stylelint_lsp'
 }
 local opts = {
-  on_attach = require("core.plugins.lsp.handlers").on_attach,
-  capabilities = require("core.plugins.lsp.handlers").capabilities,
+  on_attach = require("magnus.plugins.lsp.handlers").on_attach,
+  capabilities = require("magnus.plugins.lsp.handlers").capabilities,
 }
 
 for _, server in pairs(servers) do
-  local require_ok, name = pcall(require, "core.plugins.lsp.settings." .. server)
+  local require_ok, name = pcall(require, "magnus.plugins.lsp.settings." .. server)
   if require_ok then
     opts = vim.tbl_deep_extend("force", name, opts)
     -- print(P(name))

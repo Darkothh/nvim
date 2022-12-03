@@ -27,7 +27,7 @@ M.winbar_filetype_exclude = {
   "Markdown",
 }
 
-local icons = require "core.icons"
+local icons = require "magnus.icons"
 local function getFile()
   local filename = vim.fn.expand "%:~:."
   local path_separator = package.config:sub(1, 1)
@@ -39,7 +39,7 @@ M.get_filename = function()
   getFile()
   local filename = A
   local extension = vim.fn.expand "%:e"
-  local f = require "core.functions"
+  local f = require "magnus.functions"
 
   if not f.isempty(filename) then
     local file_icon, file_icon_color =
@@ -74,8 +74,8 @@ local get_gps = function()
     return ""
   end
 
-  if not require("core.functions").isempty(gps_location) then
-    return require("core.icons").sep.breadcrump_sep .. gps_location
+  if not require("magnus.functions").isempty(gps_location) then
+    return require("magnus.icons").sep.breadcrump_sep .. gps_location
   else
     return ""
 
@@ -94,7 +94,7 @@ M.get_winbar = function()
   if excludes() then
     return
   end
-  local f = require "core.functions"
+  local f = require "magnus.functions"
   local value = M.get_filename()
 
   local gps_added = false
@@ -107,7 +107,7 @@ M.get_winbar = function()
   end
 
   if not f.isempty(value) and f.get_buf_option "mod" then
-    local mod = "%#LspCodeLens#" .. require("core.icons").ui.Circle .. "%*"
+    local mod = "%#LspCodeLens#" .. require("magnus.icons").ui.Circle .. "%*"
     if gps_added then
       value = value .. " " .. mod
     else
@@ -138,7 +138,7 @@ M.create_winbar = function()
         callback = function()
           local status_ok, _ = pcall(vim.api.nvim_buf_get_var, 0, "lsp_floating_window")
           if not status_ok then
-            require("core.winbar").get_winbar()
+            require("magnus.winbar").get_winbar()
           end
         end,
       }
