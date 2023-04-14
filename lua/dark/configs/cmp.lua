@@ -116,10 +116,10 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = 'nvim_lsp', group_index = 2 },
-    { name = "luasnip", group_index = 2 },
-    { name = "buffer", group_index = 2 },
-    { name = "nvim_lua", group_index = 2 },
+    { name = 'nvim_lsp', priority = 2 },
+    { name = "luasnip", priority = 2 },
+    { name = "buffer", priority = 2 },
+    { name = "nvim_lua", priority = 1 },
   },
   sorting = {
     priority_weight = 2,

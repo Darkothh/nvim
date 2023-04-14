@@ -26,8 +26,6 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-  -- NOTE: This is where your plugins related to LSP can be installed.
-  --  The configuration is done below. Search for lspconfig to find it below.
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -52,6 +50,8 @@ require('lazy').setup({
     -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = {
+      -- autopairs
+      'windwp/nvim-autopairs',
       'hrsh7th/cmp-nvim-lsp',
       'saadparwaiz1/cmp_luasnip',
       'L3MON4D3/LuaSnip',
@@ -102,6 +102,14 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
+  {
+    'TroubleC0re/core.nvim',
+    dependencies = {
+      'akinsho/toggleterm.nvim',
+    },
+    opts = {
+    }
+  },
   -- Fuzzy Finder (files, lsp, etc)
   {
     'nvim-telescope/telescope.nvim',
@@ -119,6 +127,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
+      'p00f/nvim-ts-rainbow',
     },
     config = function()
       -- pcall(require('nvim-treesitter.install').update { with_sync = true })

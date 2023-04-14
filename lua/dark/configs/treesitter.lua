@@ -3,6 +3,11 @@ require('nvim-treesitter.configs').setup {
   auto_install = false,
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
+  rainbow = {
+    enable = true,
+    extend_mode = true,
+    max_file_lines = nil,
+  },
   incremental_selection = {
     enable = true,
     keymaps = {
