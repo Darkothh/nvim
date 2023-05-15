@@ -12,12 +12,12 @@ if not lspconfig_status_ok then return end
 -- }
 
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-
+  pyright = {},
+  emmet_ls = {},
+  html = {},
+  cssls = {},
+  rust_analyzer = {},
+  tsserver = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },

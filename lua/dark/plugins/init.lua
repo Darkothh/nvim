@@ -45,13 +45,16 @@ require('lazy').setup({
       require("dark.configs.lsp.init")
     end
   },
-
+  {      -- autopairs
+    'windwp/nvim-autopairs',
+    config = function ()
+      require("dark.configs.autopairs")
+    end
+  },
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = {
-      -- autopairs
-      'windwp/nvim-autopairs',
       'hrsh7th/cmp-nvim-lsp',
       'saadparwaiz1/cmp_luasnip',
       'L3MON4D3/LuaSnip',
