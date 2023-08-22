@@ -18,33 +18,33 @@ end
 
 local compare = require "cmp.config.compare"
 
-local kind_icons = {
-  Text = "",
-  Method = "m",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "",
-  Interface = "",
-  Module = "",
-  Property = "",
-  Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = "",
-}
+-- local kind_icons = {
+--   Text = "",
+--   Method = "m",
+--   Function = "",
+--   Constructor = "",
+--   Field = "",
+--   Variable = "",
+--   Class = "",
+--   Interface = "",
+--   Module = "",
+--   Property = "",
+--   Unit = "",
+--   Value = "",
+--   Enum = "",
+--   Keyword = "",
+--   Snippet = "",
+--   Color = "",
+--   File = "",
+--   Reference = "",
+--   Folder = "",
+--   EnumMember = "",
+--   Constant = "",
+--   Struct = "",
+--   Event = "",
+--   Operator = "",
+--   TypeParameter = "",
+-- }
 local icons = require("dark.plugins.icons")
 vim.api.nvim_set_hl(0, "CmpItemKindSnippet", { fg = "#ad84b4" })
 
@@ -100,17 +100,18 @@ cmp.setup {
   formatting = {
     fields = { "kind", "abbr" },
     format = function(entry, vim_item)
-      vim_item.kind = string.format("%s", icons.kind[vim_item.kind])
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      -- vim_item.kind = string.format("%s", icons.kind[vim_item.kind])
+      -- vim_item.kind = string.format('%s %s', icons.kind[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      vim_item.kind = string.format('%s %s', icons.kind[vim_item.kind] ,vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
-        nvim_lsp = "ﲳ",
+        nvim_lsp = "",
         nvim_lua = "",
         treesitter = "",
-        path = "ﱮ",
+        path = "",
         buffer = "﬘",
         zsh = "",
         luasnip = "",
-        spell = "暈",
+        spell = "",
       })[entry.source.name]
       return vim_item
     end,
@@ -118,6 +119,7 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp', priority = 2 },
     { name = "luasnip", priority = 2 },
+    { name = "path", group_index = 2 },
     { name = "buffer", priority = 2 },
     { name = "nvim_lua", priority = 1 },
   },
@@ -155,5 +157,3 @@ cmp.setup {
     ghost_text = true,
   },
 }
-require "cmp".setup.filetype({ "conf", "dosini", "config" },
-    { sources = { { name = "fonts"} } })

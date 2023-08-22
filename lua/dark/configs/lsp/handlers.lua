@@ -1,11 +1,11 @@
 local M = {}
-
+local icons = require("dark.plugins.icons").ui
 M.setup = function()
   local signs = {
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
+    { name = "DiagnosticSignError", text = icons.Error },
+    { name = "DiagnosticSignWarn", text = icons.Warn },
+    { name = "DiagnosticSignHint", text = icons.Hint },
+    { name = "DiagnosticSignInfo", text = icons.Info },
   }
 
   for _, sign in ipairs(signs) do

@@ -1,3 +1,4 @@
+local icons = require "dark.plugins.icons".ui
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   renderer = {
@@ -19,10 +20,10 @@ require("nvim-tree").setup({
   diagnostics = {
     enable = true,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = icons.Hint,
+      info = icons.Info,
+      warning = icons.Warn,
+      error = icons.Error,
     }
   },
 })
