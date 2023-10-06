@@ -12,10 +12,40 @@ require('lazy').setup({
 
   'christoomey/vim-tmux-navigator',
 
+  --FORMATTER 
+  {
+    'nvimtools/none-ls.nvim',
+    ft = {"python"},
+    opts = function()
+     require("dark.configs.null-ls")
+    end
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function()
+      require("dark.configs.dap")
+    end
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
+    config = function (_, opts)
+      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
+    end,
+  },
+
+  --THEMES
+  'catppuccin/nvim',
+
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-  
   {
     'karb94/neoscroll.nvim',
     config = function()
@@ -31,7 +61,6 @@ require('lazy').setup({
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
@@ -44,6 +73,16 @@ require('lazy').setup({
     config = function()
       require("dark.configs.lsp.init")
     end
+  },
+  {'williamboman/mason.nvim',
+    opts = {
+      ensure_installed = {
+        "mypy",
+        "black",
+        "ruff",
+        "debugpy",
+      }
+    },
   },
   {      -- autopairs
     'windwp/nvim-autopairs',
@@ -80,23 +119,20 @@ require('lazy').setup({
 
   {
     -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
+    'tamton-aquib/staline.nvim',
+    config = function()
+      require("dark.configs.staline")
+    end
     -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
   },
 
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
+    main = "ibl",
+    config = function()
+      require("dark.configs.ibl")
+    end,
     opts = {
       char = '┊',
       show_trailing_blankline_indent = false,

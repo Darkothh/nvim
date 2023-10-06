@@ -12,6 +12,10 @@ end
 
 vim.g.mapleader = " "
 
+--DEBBUGER
+nmap('<leader>db', '<cmd> DapToggleBreakpoint <CR>')
+vim.keymap.set('n', '<leader>df',function()require('dap-python').test_method()end, { desc = '[?] Find recently opened files' })
+
 nmap('x', '"_x')
 -- nmap('p', '"0p')
 nmap('-', '<C-x>')

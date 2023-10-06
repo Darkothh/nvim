@@ -1,16 +1,6 @@
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then return end
 
--- local servers = {
---   'lua_ls',
---   'tsserver',
---   'html',
---   'pyright',
---   'cssls',
---   'vimls',
---   'bashls',
--- }
-
 local servers = {
   pyright = {},
   emmet_ls = {},
@@ -52,14 +42,6 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
--- for _, server in pairs(servers) do
---   local require_ok, name = pcall(require, "dark.configs.lsp.settings" .. server)
---   if require_ok then
---     opts = vim.tbl_deep_extend("force", name, opts)
---     -- print(P(name))
---   end
---   lspconfig[server].setup(opts)
--- end
 
 lspconfig.emmet_ls.setup {
   filetypes = { 'html' },
