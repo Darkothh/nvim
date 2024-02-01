@@ -1,7 +1,3 @@
-⚠️ Para ver la configuración de las capturas cambia a la rama `arch-outdate` ⚠️
-
-## nvim
-
 Dotfiles de Neovim para Windows Y Linux (Autocompletado, Diagnostics, GitSigns, etc).
 
 > [!IMPORTANT]
