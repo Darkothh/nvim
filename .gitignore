@@ -1,7 +1,10 @@
-/dev/
-/packerC/
-/vscode-java-test/
-/java-debug/
-/plugin/packer_compiled.lua
-/eclipse.jdt.ls/
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
 lazy-lock.json
+lazyvim.json
+data
