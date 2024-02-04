@@ -10,7 +10,7 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = {
-      colorscheme = "kanagawa",
+      colorscheme = "kanagawa-dragon",
     } },
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
@@ -28,7 +28,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "tokyonight", "habamax", "kanagawa", "solarized-osaka" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {

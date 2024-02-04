@@ -173,6 +173,10 @@ return {
     end,
   },
   {
+    "alexghergh/nvim-tmux-navigation",
+    opts = {},
+  },
+  {
     "folke/persistence.nvim",
     event = "BufReadPre",
     opts = { options = { "buffers", "curdir", "tabpages", "winsize" } },
@@ -182,5 +186,25 @@ return {
     { "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
     { "<leader>qd", function() require("persistence").stop() end, desc = "Don't Save Current Session" },
   },
+  },
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = {
+      fast_wrap = {
+        map = "<c-e>",
+        chars = { "{", "[", "(", '"', "'" },
+        pattern = [=[[%'%"%)%>%]%)%}%,]]=],
+        end_key = "$",
+        keys = "qwertyuiopzxcvbnmasdfghjkl",
+        check_comma = true,
+        highlight = "PmenuSel",
+        highlight_grey = "Comment",
+      },
+    },
+  },
+  {
+    "karb94/neoscroll.nvim",
+    opts = {},
   },
 }

@@ -30,6 +30,17 @@ nmap("<C-k>", "<c-w>k")
 nmap("<C-j>", "<c-w>j")
 nmap("<C-h>", "<c-w>h")
 
+-- nnoremap <silent> <C-Space> <Cmd>NvimTmuxNavigateNext<CR>
+-- nnoremap <silent> <C-\> <Cmd>NvimTmuxNavigateLastActive<CR>
+-- nnoremap <silent> <C-h> <Cmd>NvimTmuxNavigateLeft<CR>
+-- nnoremap <silent> <C-j> <Cmd>NvimTmuxNavigateDown<CR>
+-- nnoremap <silent> <C-k> <Cmd>NvimTmuxNavigateUp<CR>
+-- nnoremap <silent>  <Cmd>NvimTmuxNavigateRight<CR>
+nmap("<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>")
+nmap("<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
+nmap("<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>")
+nmap("<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>")
+
 nmap("ss", ":split<Return>")
 nmap("sv", ":vsplit<Return>")
 nmap("<C-w><left>", "<C-w>>")
