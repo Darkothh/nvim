@@ -207,4 +207,12 @@ return {
     "karb94/neoscroll.nvim",
     opts = {},
   },
+  {
+    "TroubleC0re/core.nvim",
+    dependencies = {
+      "akinsho/toggleterm.nvim",
+    },
+    opts = {},
+  },
+  -- Hola, dame 300 nombres de usuario con estilo oscuro y mitico que tengan la palabra "Dark" y hagan referencia a nombres de demonios, combina la palabra "Dark" con el nombre al que haces la referencia para que se haga un username corto maximo 8 letras. Corta y crea palabras nuevas para que den este estilo oscuro y siniestro, quiero 300 nombres, combina los que ya creaste para tener nuevos, crea combinaciones raras y unicas con el estilo Oscuro y siniestro
 }
