@@ -9,7 +9,7 @@ return {
           F = { "<C-W>gf", "Go file in new tab" },
           s = { "<C-W>f", "go file in split window" },
           v = { "<C-W>vgf", "Go file in vertical window" },
-          d = { "gd", "Go definition" },
+          d = { "<cmd>Telescope lsp_definitions<cr>", "Go definition's" },
         },
       },
     },
