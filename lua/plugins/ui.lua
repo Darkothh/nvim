@@ -1,4 +1,4 @@
-local utils = require("utils.director")
+local utils = require("dark.utils")
 return {
   {
     "folke/noice.nvim",
@@ -25,10 +25,6 @@ return {
         show_close_icon = false,
       },
     },
-  },
-  {
-    "willthbill/opener.nvim",
-    opts = {},
   },
   {
     "nvimdev/dashboard-nvim",
@@ -64,7 +60,7 @@ return {
           { action = "Telescope oldfiles",                                       desc = " Recent files",    icon = " ", key = "r" },
           { action = "Telescope live_grep",                                      desc = " Find text",       icon = " ", key = "y" },
           { action = [[lua require("lazyvim.util").telescope.config_files()()]], desc = " Config",          icon = " ", key = "c" },
-          { action = "e " .. utils.directoryes.notes, desc = " Notes",          icon = " ", key = "n" },
+          { action = "e " .. utils.directoryes.notes,                            desc = " Notes",          icon = " ", key = "n" },
           { action = 'lua require("persistence").load()',                        desc = " Restore Session", icon = " ", key = "s" },
           { action = "LazyExtras",                                               desc = " Lazy Extras",     icon = " ", key = "x" },
           { action = "Lazy",                                                     desc = " Lazy",            icon = "󰒲 ", key = "l" },
