@@ -13,6 +13,7 @@ return {
         "typescript-language-server",
         "html-lsp",
         "css-lsp",
+        "astro-language-server",
       })
     end,
   },

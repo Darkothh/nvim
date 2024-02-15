@@ -1,8 +1,10 @@
 return {
+  { "sainnhe/gruvbox-material", name = "gruvbox", lazy = false, priority = 1000 },
+  { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
   {
     "neanias/everforest-nvim",
     version = false,
-    lazy = false,
+    lazy = true,
     -- priority = 1000,
     config = function()
       require("everforest").setup({
@@ -12,7 +14,7 @@ return {
   },
   {
     "catppuccin/nvim",
-    lazy = false,
+    lazy = true,
     name = "catppuccin",
     opts = {
       styles = {
@@ -33,17 +35,17 @@ return {
   },
   {
     "craftzdog/solarized-osaka.nvim",
-    lazy = false,
+    lazy = true,
     -- priority = 1000,
     opts = function()
       return {
-        transparent = false,
+        transparent = true,
       }
     end,
   },
   {
     "rebelot/kanagawa.nvim",
-    lazy = false,
+    lazy = true,
     opts = function()
       return {
         undercurl = true, -- enable undercurls
@@ -58,12 +60,12 @@ return {
   },
   {
     "ellisonleao/gruvbox.nvim",
-    lazy = false,
+    lazy = true,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "moonfly",
     },
   },
 }

@@ -3,3 +3,9 @@
 -- Add any additional options here
 --
 vim.o.background = "dark" -- or "light" for light mode
+vim.g.moonflyItalics = true
+vim.filetype.add({
+  extension = {
+    mdx = "mdx",
+  },
+})
