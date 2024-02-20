@@ -4,7 +4,7 @@ return {
   {
     "neanias/everforest-nvim",
     version = false,
-    lazy = true,
+    lazy = false,
     -- priority = 1000,
     config = function()
       require("everforest").setup({
@@ -14,7 +14,7 @@ return {
   },
   {
     "catppuccin/nvim",
-    lazy = true,
+    lazy = false,
     name = "catppuccin",
     opts = {
       styles = {
@@ -35,7 +35,7 @@ return {
   },
   {
     "craftzdog/solarized-osaka.nvim",
-    lazy = true,
+    lazy = false,
     -- priority = 1000,
     opts = function()
       return {
@@ -45,7 +45,7 @@ return {
   },
   {
     "rebelot/kanagawa.nvim",
-    lazy = true,
+    lazy = false,
     opts = function()
       return {
         undercurl = true, -- enable undercurls
@@ -60,12 +60,12 @@ return {
   },
   {
     "ellisonleao/gruvbox.nvim",
-    lazy = true,
+    lazy = false,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "moonfly",
+      colorscheme = "catppuccin",
     },
   },
 }

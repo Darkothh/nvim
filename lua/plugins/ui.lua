@@ -1,6 +1,16 @@
 local utils = require("dark.utils")
 return {
   {
+    "norcalli/nvim-colorizer.lua",
+    lazy = false,
+    opts = {
+      "*",
+      bash = {
+        mode = "foreground",
+      },
+    },
+  },
+  {
     "folke/noice.nvim",
     opts = function(_, opts)
       table.insert(opts.routes, {
