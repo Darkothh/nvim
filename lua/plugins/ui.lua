@@ -40,7 +40,7 @@ return {
     "nvimdev/dashboard-nvim",
     event = "VimEnter",
     opts = function()
-      local logo = utils.banners.goth
+      local logo = utils.banners.mochi
       logo = string.rep("\n", 3) .. logo .. "\n\n"
 
       local opts = {
